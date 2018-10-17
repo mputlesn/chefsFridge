@@ -1,0 +1,22 @@
+<ion-content>
+ 
+
+<ion-grid  class="appContainer" >
+  <ion-row>
+    <ion-col col-6 *ngFor="let a of recipes; let i = index;">
+      
+        <div class="imageHolder">
+            <img src={{a.image}} alt="">
+          </div>
+          <div class="dishNameHolder">
+             <p class="dishNameText"> {{a.name}} </p>
+            </div>
+            <div class="serveTimeHolder">
+              <p class="serveTimeText"> Serve: {{a.serve}} people  Time : {{a.time}} minutes</p>
+              </div>
+  
+    <button (click)="view(a.key)" class= "button" ion-button color="secondary" round>View Recipe</button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>

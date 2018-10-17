@@ -1,0 +1,124 @@
+page-sign-in {
+    .grid{
+        font-size: 0.9em;
+        text-align: center;
+        position: relative;
+        top: 40%;
+    }
+    h1{
+        text-align: center;
+        font-size: 2em;
+    }
+    .appContainer{
+        border: solid 0px black;
+        height: 100%;
+    }
+    .logoHolder{
+        border: solid 0px black;
+        position: relative;
+        top: 30px;
+        padding-left: 15%;
+        
+    }
+    .logo{
+        display: block;
+        margin: 0% -5% auto;
+        width: 20em ;
+    }
+    .myLogo{
+        width: 40%;
+        position: relative;
+        left: 30%; 
+    }
+    .signInText{
+        border: solid 0px black;
+        position: relative;
+        top: 70px;
+    }
+    .signInText{
+        font-size: 200%;
+        position: relative;
+        left: 4%;
+        color: rgb(98, 133, 134);
+    }
+     .signInTextHolder{
+        position: relative;
+        width: 50%;
+    }
+    .signInFormHolder{
+        border: solid 0px black;
+        position: relative;
+        top: 10%;
+        padding: 10%;
+        width: 95%;
+    }
+    
+    .signInButton{
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        width: 80%;
+        top: 10%;
+        background-color: #55141C;
+    }
+    .forgotPwdText{
+        text-align: center;
+        font-weight: bold;
+        position: relative;
+        color: rgb(98, 133, 134);
+    }
+    .signUpText{
+        text-align: center;
+        font-weight: bold;
+        position: relative;
+        top: 40px;
+        color: rgb(98, 133, 134);
+    }
+
+    @media screen and (min-width: 767px) and (max-width: 1024px) {
+        .logoHolder{
+            border: solid 0px black;
+            position: relative;
+            top: 60px;
+            padding-left: 35%;
+        }
+        .signInFormHolder{
+            border: solid 0px black;
+            position: relative;
+            top: 10%;
+            padding: 10%;
+            width: 95%;
+            font-size: 30px;
+        }
+    }
+    @media screen and (min-width: 370px) and (max-width: 376px) {
+        .signInFormHolder{
+            border: solid 0px black;
+            position: relative;
+            top: 10%;
+            padding: 10%;
+            width: 95%;
+            font-size: 0.9em;
+        }
+    }
+    @media screen and (min-width: 359px) and (max-width: 369px) {
+        .signInFormHolder{
+            border: solid 0px black;
+            position: relative;
+            top: 10%;
+            padding: 10%;
+            width: 95%;
+            font-size:  0.9em;
+        }
+    }
+    @media screen and (min-width: 319px) and (max-width: 320px) {
+        .signInFormHolder{
+            border: solid 0px black;
+            position: relative;
+            top: 10%;
+            padding: 10%;
+            width: 95%;
+            font-size: 0.7em;
+        }
+    }
+}

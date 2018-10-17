@@ -1,0 +1,74 @@
+<!-- <ion-content padding class="mainContent">
+    <div class="dishContent">  
+    <div class="dishImage">   
+    <img src="{{recipe.image}}" class="imgrecipe">
+    </div>
+    <div class="dishName">
+      {{recipe.name}}
+        </div>
+      
+    <p *ngFor="let a of recipe.ingredients" class="text">
+      {{a}}
+      
+    </p>
+    <hr class="h">
+    <h4 class="ingrdientsTitle">Instructions</h4>
+    <p *ngFor="let b of recipe.directions" class="text">
+        
+      <ion-grid>
+        <ion-row>
+          <ion-col col-1>&#10022;</ion-col>
+          <ion-col>{{b}}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </p>
+    <div class="istardiv">
+      <ion-icon name="star" class="rateStars" (click)="starClickOne(1)"></ion-icon>
+      <ion-icon name="star" class="rateStars" (click)="starClickTwo()"></ion-icon>
+      <ion-icon name="star" class="rateStars" (click)="starClickThree()"></ion-icon>
+      <ion-icon name="star" class="rateStars" (click)="starClickFour()"></ion-icon>
+      <ion-icon name="star" class="rateStars" (click)="starClickFive()"></ion-icon>
+    </div>
+  
+    
+  </div>
+    </ion-content> -->
+    <ion-content>
+      <div class="appContainer">
+        <div class="imageHolder">
+          <ion-fab>
+            <ion-icon ios="ios-arrow-round-back" md="md-arrow-round-back" class="backButton" (click)="back()"></ion-icon>
+          </ion-fab>
+          <img src="{{recipe.image}}" class="recipeImage">
+        </div>
+        <div class="dishDetailsHolder">
+            <p class="dishNameText">{{recipe.name}} </p>
+        </div>
+        <div class="completeDetailsHolder">
+            <div class="headerTextIngridients">
+              <p class="ingridientsButton" (click)="hide2=!hide2">Ingridients</p>
+            </div>
+            <div *ngIf='hide2'>
+              <div class="IngridientsSection" *ngFor="let a of recipe.ingredients">
+                <img src="../../assets/imgs/cooking.png" class="cookIcon">
+                <p class="ingridientsContent">{{a}}</p>
+              </div>
+            </div>
+            <div class="headerTextInstructions">
+              <p class="ingridientsButton" (click)="hide=!hide">instructions</p>
+            </div>
+            <div *ngIf='hide'>
+              <div class="IngridientsSection2">
+                <ion-slides pager class="slideHolder">
+                  <ion-slide *ngFor="let b of recipe.directions">
+                    <p id="ins" class="fontslide">{{b}}</p>
+                  </ion-slide>
+    
+    
+                </ion-slides>
+              </div>
+              <p>... </p>
+            </div>
+          </div>
+      </div>
+    </ion-content>

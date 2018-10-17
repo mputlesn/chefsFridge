@@ -1,0 +1,13 @@
+<ion-header class="bskt">
+    <ion-title color="toilet">Cart Items</ion-title>
+</ion-header>
+
+
+<ion-content padding class="con">
+<div *ngFor="let a of items; let i = index">
+  <ion-item class="itemss">{{a}}
+ <ion-icon ios="ios-close" md="md-close" (click)="delete(i)"></ion-icon>
+</ion-item>
+</div>
+<button ion-button (click)="search()" class="btn">Search</button>
+</ion-content>

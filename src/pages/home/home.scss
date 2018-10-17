@@ -1,0 +1,121 @@
+page-home {
+.up{
+    height: 14em;
+    // max-height: 40%;
+    background-color: #55141C;
+    margin-bottom: 1em;
+    box-shadow: 2px 5px 7px rgba(0, 0,0, .5);
+}
+.down{
+    height: 60%;
+    max-height: 60%;
+    padding-top: 35%;
+    margin-left: 14%;
+    margin-right: 14%;
+}
+
+.img{
+    height: 15em;
+    width: 90%;
+    position: relative;
+    top: 25%;
+    display: block;
+    margin: 0 auto;
+    background: linear-gradient(360deg, rgba(rgb(44, 6, 11), .9), transparent),url('../../assets/imgs/food.png');
+    background-size: cover;
+    border-radius: 2em;
+    display: flex;
+    align-items: center;
+    box-shadow: 2px 5px 7px rgba(0, 0,0, .5);
+}
+
+img{
+    border-radius: 25px;
+    display: block;
+    margin: 0 auto;
+}
+.input{
+    background-color: transparent;
+    border-radius: 25px;
+    margin-top: 0.5em;
+    color: white !important;
+}
+
+.cat{
+    color: white
+}
+.name{
+    color: white;
+    text-align: center;
+    font-size: 2em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 1.5em
+}
+
+.items{
+    height: 120px;
+    width: 80%;
+    // background: rgba(black, 0.6);
+    border-radius: 25px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 5px;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.icon{
+    border-radius: 15px;
+    width: 8em;
+    box-shadow: 2px 1px 8px rgba(#55141C, 0.9);
+    margin: 0.6em auto;
+}
+
+div.icon:hover{
+    background:rgba(#665D64, 0.2 );
+}
+
+
+div.icon:focus{
+    background:rgba(#55141C, 0.9);
+}
+
+.btn{
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    border-radius: 2.5em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.text{
+    font-size: 0.8em;
+    text-align: center;
+    margin-top: -5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.iconsCat{
+    border-radius: 15px;
+    width: 60px;
+    box-shadow: 2px 1px 8px rgba(#55141C, 0.9);
+    margin: 5% auto;
+}
+
+.row1{
+    width: 80%;
+}
+
+.empty{
+    text-align: center;
+    margin-top: 3em;
+    font-size: 1.5em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+
+}
+
+

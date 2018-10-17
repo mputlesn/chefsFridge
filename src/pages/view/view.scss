@@ -1,0 +1,120 @@
+page-view {
+    .imageHolder{
+        border: solid 0px black;
+        height: 335px;
+    }
+    .recipeImage{
+        width: 100%;
+        height: 25em;
+    }
+    .dishDetailsHolder{
+        border: solid 0px black;
+        height: 6em;
+        background-color: #55141C;
+        display: flex;
+        align-items: center;
+        margin-bottom: 1em;
+        box-shadow: 5px 4px 5px rgba(grey, .8);
+    }
+    .dishNameText{
+        font-size: 1.2em;
+        font-weight: bold;
+        color: white;
+        width: 100vw;
+        text-align: center;
+        text-transform: capitalize;
+    }
+    .completeDetailsHolder{
+        border: solid 0px black; 
+        top: -18px;
+        background-color: White;  
+    }
+    .headerTextIngridients{
+        border: solid 4px #665D64;
+        top: 23px;
+        height: 63px; 
+        width: 94%;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 30px;
+        box-shadow: 4px 3px 8px rgba(grey, 0.9);
+    }
+    .IngridientsSection{
+        border: solid 0px black;
+        top: 33px;
+        background-color: white;
+        color: #55141C;
+        font-size: 1.1em;
+        height: 48px;
+        display: flex;
+        flex-direction: row;
+        padding: 0 1em;
+        &:first-child{
+            margin-top: 1em;
+        }
+    }
+    .ingridientsContent{
+        left: 15%;
+        top: -27px;
+    }
+    .IngridientsSection2{
+        border: solid 0px black;
+        top: 45px;
+        background-color: white;
+        display: flex;
+        flex-flow: row nowrap;
+    }
+    .headerTextInstructions{
+        border: solid 4px #665D64;
+        top: 35px;
+        height: 63px; 
+        width: 94%;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 30px;
+        box-shadow: 4px 3px 8px rgba(grey, 0.9);
+        margin: 0.6em auto;
+      
+    }
+    .ingridientsButton{
+        font-weight: 400 !important;
+        text-align: center;
+        font-size: 1.4em;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        color: #55141C;
+        position: relative;
+        top:-8px;
+        font-weight: bold;
+       // box-shadow: 2px 1px 8px rgba(#55141C, 0.9);
+        //margin: 0.6em auto;
+    }
+    .slideHolder{
+        border: solid 0px #665D64;
+        background-color: #55141C;
+        position: relative;
+        top:0px;
+        width: 100%;
+        background-color: white;
+    }
+    .cookIcon{
+        width: 1.5em;
+        height: 1.5em;
+        margin: .5em;
+        position: relative;
+        top: .06em;
+    }
+    .backButton{
+        font-size: 2em;
+    }
+    #ins{
+        padding: 5%;
+    }
+    .fontslide{
+       
+        background-color: white;
+        color: #55141C;
+        font-size: 0.9em;
+        
+    }
+}
