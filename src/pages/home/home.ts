@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ChefsfridgeProvider } from '../../providers/chefsfridge/chefsfridge';
 import { SearchPage } from '../search/search';
+import items from '../../interfaces/array';
 
 declare var firebase
 @Component({
@@ -9,7 +10,7 @@ declare var firebase
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+  itemArr = items
   cat:string = "";
   sub:string;
   name: string;
@@ -31,15 +32,25 @@ export class HomePage {
   })
   }
 
-  sub_cat(option){
-    this.sub = option;
+  ionViewDidLoad() {
+   
+    console.log('ionViewDidLoad HomePage');
+    this.itemArr = []
   }
-
-  search(){
+  
+  sub_cat(option){
     var obj={
       cat: this.cat,
-      sub: this.sub
+      sub: option
     }
     this.navCtrl.push(SearchPage, obj);
   }
+
+  // search(){
+  //   var obj={
+  //     cat: this.cat,
+  //     sub: this.sub
+  //   }
+  //   this.navCtrl.push(SearchPage, obj);
+  // }
 }

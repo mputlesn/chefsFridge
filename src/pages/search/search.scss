@@ -85,6 +85,17 @@ page-search {
             
         }
 
+        .backButton{
+            font-size: 1.5em;
+            padding: 5px;
+            color: white;
+            border-radius: 1em;
+            margin-left: 10%;
+            margin-top: 5%;
+            width: 1.5em;
+            text-align: center;
+        }
+
         .active{
             //box-shadow: 2px 1px 8px rgba(#55141C, 0.9) !important; 
             background-color: #55141C !important;

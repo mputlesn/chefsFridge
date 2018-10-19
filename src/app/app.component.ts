@@ -5,12 +5,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { ChefsfridgeProvider } from '../providers/chefsfridge/chefsfridge';
 import { HomePage } from '../pages/home/home';
 import { SignInPage } from '../pages/sign-in/sign-in';
-import {  } from '../pages/sign-up/sign-up'
+import { timer } from 'rxjs/observable/timer';
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any;
+  rootPage: any;
+  showSplash = true;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, chefsFridge: ChefsfridgeProvider) {
     platform.ready().then(() => {
@@ -18,18 +20,21 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
+      timer(3000).subscribe(() => this.showSplash = false)
     });
 
-    chefsFridge.checkstate().then((data:any)=>{
+    chefsFridge.checkstate().then((data: any) => {
 
-      if (data == "yes"){
+      if (data == "yes") {
         this.rootPage = HomePage;
- 
+
       }
       else {
         this.rootPage = SignInPage
       }
-     })
+    })
   }
+
 }
+
 
