@@ -226,8 +226,7 @@ export class SearchPage {
       const toast = this.toastCtrl.create({
         message: 'Item added',
         duration: 3000,
-        cssClass: 'changeToast1',
-        position: 'top'
+        cssClass: 'changeToast1'
       });
       toast.present();
     } else {
@@ -235,8 +234,7 @@ export class SearchPage {
       const toast = this.toastCtrl.create({
         message: 'Item has already been added',
         duration: 3000,
-        cssClass: 'changeToast',
-        position: 'top'
+        cssClass: 'changeToast'
       });
       toast.present();
     }
