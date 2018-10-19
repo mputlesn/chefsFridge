@@ -43,7 +43,7 @@ export class ChefsfridgeProvider {
         loader.present();
        }, (error)=>{
         const toast = this.toastCtrl.create({
-          message: error,
+          message: error.message,
           duration: 3000
         });
         toast.present();
@@ -91,7 +91,7 @@ export class ChefsfridgeProvider {
           resolve();
       }, (error)=>{
         const toast = this.toastCtrl.create({
-          message: error,
+          message:error.message,
           duration: 3000
         });
         toast.present();
@@ -464,7 +464,7 @@ updateProfile(name, surname, bio){
           },(error)=>{
             if (error) {
               // The write failed...
-              msg = error+" please try uploading again...";
+              msg = " please try uploading again...";
               console.log(error+" please try uploading again...");
               
             } else {

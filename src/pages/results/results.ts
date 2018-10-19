@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { user } from '../../interfaces/user';
 import { ChefsfridgeProvider } from '../../providers/chefsfridge/chefsfridge';
 import { ViewPage } from '../view/view';
+import { SearchPage } from '../search/search';
 /**
  * Generated class for the ResultsPage page.
  *
@@ -39,6 +40,10 @@ export class ResultsPage {
 
   view(key){
     this.navCtrl.push(ViewPage, {key:key});
+   }
+
+   back(){
+     this.navCtrl.push(SearchPage);
    }
 
 }

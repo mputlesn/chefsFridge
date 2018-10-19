@@ -5,6 +5,7 @@ import { ConfirmPage } from '../confirm/confirm';
 import { PopoverController } from 'ionic-angular';
 import items from '../../interfaces/array';
 import cat from '../../interfaces/cat';
+import itemArr from '../../interfaces/itemArr';
 /**
  * Generated class for the SearchPage page.
  *
