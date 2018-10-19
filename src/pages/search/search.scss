@@ -1,4 +1,6 @@
+
 page-search {
+
     .theBtn{
         width: 100%;
     }
@@ -35,11 +37,11 @@ page-search {
         height: 30px;
         width: 30px;
         margin-left: 88%;
-        margin-top: -15px;
+        margin-top: -35px;
     }
     .cnt{
         position: relative;
-        top: 5px;
+        top: -15px;
         background-color: rgb(182, 130, 61);
         color: white;
         width:6%;
@@ -66,15 +68,7 @@ page-search {
         color: white;
         position: relative;
     }
-    // .mySearchBar{
-    //     display: block;
-    //     position: relative;
-    //     margin: 8% 0% auto; 
-    //     border-color: rgb(0, 225, 255);
-    //     border-style: solid;
-    //     font-size: 2em;
     
-    // }
           .iconHolder{
             border: dotted 0px black;
             position: relative;
@@ -86,14 +80,16 @@ page-search {
         }
 
         .backButton{
-            font-size: 1.5em;
+            font-size: 2em;
             padding: 5px;
             color: white;
             border-radius: 1em;
-            margin-left: 10%;
-            margin-top: 5%;
+            // margin-left: 10%;
+            // margin-top: 5%;
             width: 1.5em;
             text-align: center;
+            display: block;
+            margin: 50% 15%;
         }
 
         .active{
@@ -101,30 +97,6 @@ page-search {
             background-color: #55141C !important;
             color:white;
         }
-     
-        // .navigationHolder{
-        //     border: solid 2px rgb(236, 170, 38);
-        //     position: relative;
-        //     background-color:white;
-        //     width: 100%;
-        // }
-     
-        // .iconHomePage{
-        //     width: 15%;
-        // }
-     
-        // .myNavicon{
-        //    font-size: 2em;
-        //    padding: 2%;
-        //    margin-left: 11%;
-        //    color: cadetblue;
-        //    opacity: 0.8;
-        //    font-weight: bolder;
-        // }
-     
-        // .myNavicon:hover{
-        //     color : rgb(236, 170, 38);
-        // }
      
         .mys{
             text-align: center;
@@ -154,10 +126,6 @@ page-search {
                
             }
 
-            // div.image:hover{
-            //     background:rgba(#665D64, 0.2 );
-            // }
-            
             
             .image:focus{
                 background:rgba(#665D64, 0.9);

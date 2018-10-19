@@ -30,3 +30,6 @@
     background-color: #55141C;
     
 }
+
+.changeToast{.toast-wrapper {border-radius: 12px !important; text-align: center; background: color($colors, primary);}};
+.changeToast1{.toast-wrapper {border-radius: 12px !important; text-align: center;}};

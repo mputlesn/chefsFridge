@@ -3,9 +3,10 @@ import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angu
 import { ChefsfridgeProvider } from '../../providers/chefsfridge/chefsfridge'
 import { ConfirmPage } from '../confirm/confirm';
 import { PopoverController } from 'ionic-angular';
-import items from '../../interfaces/array';
+// import items from '../../interfaces/array';
 import cat from '../../interfaces/cat';
 import itemArr from '../../interfaces/itemArr';
+import { HomePage } from '../home/home';
 /**
  * Generated class for the SearchPage page.
  *
@@ -30,10 +31,11 @@ export class SearchPage {
   temp = [];
   tempcount: number = 0;
   cnt: number = 0;
-  food = [] = items;
+  food = [];
   tempCount: number;
   disIndex: number;
-
+  tempArr = itemArr
+  temper = [];
   meat = [
     {
       breakfast: [{
@@ -135,21 +137,7 @@ export class SearchPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private chefsFridge: ChefsfridgeProvider, public popoverCtrl: PopoverController, public toastCtrl: ToastController) {
     console.log(this.category);
-    console.log();
-
-    for (let index = 0; index < this.meat.length; index++) {
-      for (let i = 0; i < this.meat[index].breakfast.length; i++) {
-        for (let j = 0; j < this.meat[index].breakfast[i].herbs.length; j++) {
-          const element = this.meat[index].breakfast[i].herbs[j];
-          console.log(element);
-
-        }
-      }
-
-    }
-    // console.log(this.meat[0].Breakfast[0].image);
     console.log(this.sub_category);
-
   }
 
   // cancel(index: number,value: string){
@@ -168,7 +156,24 @@ export class SearchPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SearchPage');
+    console.log(this.tempArr);
+    this.food = [];
+    //this.tempArr[0] = {cat: this.category, sub:this.sub_category}
+    // if(this.temper != []){
+    //   if(this.tempArr[0].cat != this.category && this.tempArr[0].sub != this.sub_category){
+    //     console.log("Not the same");
+
+    //   }
+    //   console.log("array has items");
+    // }else{
+    //   console.log("array empty");
+    // }
+
+
     this.count = this.food.length;
+
+    console.log(this.category);
+    console.log(this.sub_category);
     this.options[0] = {
       cat: this.category,
       sub: this.sub_category
@@ -176,14 +181,16 @@ export class SearchPage {
   }
 
   back() {
-    this.navCtrl.pop();
+    // this.tempArr[0] = {cat: this.category, sub:this.sub_category}
+    // this.temper[0] = 1;
+    this.navCtrl.popTo(HomePage);
   }
 
   refresh() {
 
   }
   presentPopover(myEvent) {
-    let popover = this.popoverCtrl.create(ConfirmPage);
+    let popover = this.popoverCtrl.create(ConfirmPage, { items: this.food });
     popover.present({
       ev: myEvent
     });
@@ -217,15 +224,19 @@ export class SearchPage {
       this.food.push(name);
       console.log("No duplication so name was added");
       const toast = this.toastCtrl.create({
-        message: 'Item been added',
-        duration: 3000
+        message: 'Item added',
+        duration: 3000,
+        cssClass: 'changeToast1',
+        position: 'top'
       });
       toast.present();
     } else {
       console.log("Duplication found at index " + dupIndex);
       const toast = this.toastCtrl.create({
         message: 'Item has already been added',
-        duration: 3000
+        duration: 3000,
+        cssClass: 'changeToast',
+        position: 'top'
       });
       toast.present();
     }

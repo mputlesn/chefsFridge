@@ -3,6 +3,10 @@ page-confirm {
         font-size: 1em;
         
     }
+
+    ion-title{
+        color: white;
+    }
     .bskt{
         
         font-family: Arial, Helvetica, sans-serif;
@@ -10,7 +14,13 @@ page-confirm {
         font-size: 2.5em;
         text-align: center;
         height: 40px;
+        padding-top: 5%;
+        background-color: #55141C;
+        color: white;
        
+    }
+    div.toolbar-title.toolbar-title-md{
+        color: white
     }
     
     .heads{
@@ -22,6 +32,13 @@ page-confirm {
     position: relative;
     display: block;
     margin: 5% auto;
+    border-radius: 2em;
+    font-size: 0.9em;
+    width: 10em;
+    }
+
+    .x{
+        float: right;
     }
 
 }

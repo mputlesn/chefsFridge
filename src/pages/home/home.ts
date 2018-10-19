@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { ChefsfridgeProvider } from '../../providers/chefsfridge/chefsfridge';
 import { SearchPage } from '../search/search';
 import items from '../../interfaces/array';
+import itemArr from '../../interfaces/itemArr';
 
 declare var firebase
 @Component({
@@ -10,7 +11,7 @@ declare var firebase
   templateUrl: 'home.html'
 })
 export class HomePage {
-  itemArr = items
+  temp = itemArr
   cat:string = "";
   sub:string;
   name: string;
@@ -35,7 +36,8 @@ export class HomePage {
   ionViewDidLoad() {
    
     console.log('ionViewDidLoad HomePage');
-    this.itemArr = []
+    console.log(this.temp);
+    
   }
   
   sub_cat(option){

@@ -1,13 +1,23 @@
 <ion-header class="bskt">
     <ion-title color="toilet">Cart Items</ion-title>
-</ion-header>
-
-
-<ion-content padding class="con">
-<div *ngFor="let a of items; let i = index">
-  <ion-item class="itemss">{{a}}
- <ion-icon ios="ios-close" md="md-close" (click)="delete(i)"></ion-icon>
-</ion-item>
-</div>
-<button ion-button (click)="search()" class="btn">Search</button>
-</ion-content>
+ </ion-header>
+ 
+ 
+ <ion-content padding class="con">
+ 
+ 
+    <ng-container  *ngIf="items.length == 0; then msg; else msg2"> </ng-container>
+    <ng-template #msg>
+        No items has been selected, please select items
+    </ng-template>
+ 
+    <ng-template #msg2>
+        <div *ngFor="let a of items; let i = index">
+            <ion-item class="itemss">{{a}}
+                <ion-icon ios="ios-close" md="md-close" (click)="delete(i)" class="x"></ion-icon>
+            </ion-item>
+        </div>
+        <button ion-button (click)="search()" class="btn">Search</button>
+    </ng-template>
+ 
+ </ion-content>

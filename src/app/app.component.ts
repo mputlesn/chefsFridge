@@ -11,7 +11,7 @@ import { timer } from 'rxjs/observable/timer';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage: any = SignInPage;
+  rootPage: any;
   showSplash = true;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, chefsFridge: ChefsfridgeProvider) {
@@ -23,16 +23,16 @@ export class MyApp {
       timer(3000).subscribe(() => this.showSplash = false)
     });
 
-    // chefsFridge.checkstate().then((data: any) => {
+    chefsFridge.checkstate().then((data: any) => {
 
-    //   if (data == "yes") {
-    //     this.rootPage = HomePage;
+      if (data == "yes") {
+        this.rootPage = HomePage;
 
-    //   }
-    //   else {
-    //     this.rootPage = SignInPage
-    //   }
-    // })
+      }
+      else {
+        this.rootPage = SignInPage
+      }
+    })
   }
 
 }

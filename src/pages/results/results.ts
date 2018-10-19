@@ -4,6 +4,7 @@ import { user } from '../../interfaces/user';
 import { ChefsfridgeProvider } from '../../providers/chefsfridge/chefsfridge';
 import { ViewPage } from '../view/view';
 import { SearchPage } from '../search/search';
+import itemArr from '../../interfaces/itemArr';
 /**
  * Generated class for the ResultsPage page.
  *
@@ -22,6 +23,7 @@ export class ResultsPage {
   sub: string = this.navParams.get("sub");
   items : any = this.navParams.get("item");
   recipes: any = [];
+  arr = itemArr;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private chefsFridge: ChefsfridgeProvider) {
     console.log(this.category);
@@ -43,7 +45,11 @@ export class ResultsPage {
    }
 
    back(){
-     this.navCtrl.push(SearchPage);
+    var obj={
+        cat: this.arr[0].cat,
+        sub: this.arr[0].sub
+     }
+     this.navCtrl.push(SearchPage, obj);
    }
 
 }
