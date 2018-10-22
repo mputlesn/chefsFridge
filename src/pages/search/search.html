@@ -4,7 +4,7 @@
         </ion-fab>
         <ion-label class="mys">{{category}} {{sub_category}}</ion-label>
         <!-- <ion-icon name="refresh" (click)="refresh()"></ion-icon> -->
-        <div class="cnt">{{ count }}</div>
+        <div class="cnt" (click)="presentPopover($event)">{{ count }}</div>
         <div class="ico"><img src="../../assets/icon/icons/icons8-kitchen-50.png" (click)="presentPopover($event)"></div>
 
         <!-- <ion-label class="mys">{{category}} {{sub_category}}</ion-label>

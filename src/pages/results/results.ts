@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { user } from '../../interfaces/user';
 import { ChefsfridgeProvider } from '../../providers/chefsfridge/chefsfridge';
 import { ViewPage } from '../view/view';
@@ -17,7 +17,7 @@ import itemArr from '../../interfaces/itemArr';
   selector: 'page-results',
   templateUrl: 'results.html',
 })
-export class ResultsPage {
+export class ResultsPage {       
 
   category: string = this.navParams.get("cat");
   sub: string = this.navParams.get("sub");
@@ -25,7 +25,7 @@ export class ResultsPage {
   recipes: any = [];
   arr = itemArr;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private chefsFridge: ChefsfridgeProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private chefsFridge: ChefsfridgeProvider, public loadingCtrl: LoadingController) {
     console.log(this.category);
     console.log(this.sub);
     console.log(this.items);
@@ -38,6 +38,11 @@ export class ResultsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ResultsPage');
+    const loader = this.loadingCtrl.create({
+      content: "Please wait...",
+      duration: 3000
+    });
+    loader.present();
   }
 
   view(key){

@@ -36,18 +36,35 @@ page-results {
         border-radius: 50%;
         text-align: center;
     }
+    .rec{
+        font-size: 1.5em;
+        color: #55141C;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin-left: 10%;
+        margin-top: -8%;
+    }
 
     .backButton{
-        font-size: 1.5em;
-        background-color: #55141C;;
+        font-size: 2em;
         padding: 5px;
         color: white;
         border-radius: 1em;
-        margin-left: 10%;
-        margin-top: 5%;
+        // margin-left: 10%;
+        // margin-top: 5%;
         width: 1.5em;
         text-align: center;
+        display: block;
+        margin: 50% 15%;
     }
+
+    .mys{
+        text-align: center;
+        position: relative;
+        top:30%;
+        font-size: 1.5em;
+        color: white
+    }
+    
     .serveTimeHolder{
         border:solid 0px black;
         position: relative;
@@ -69,5 +86,19 @@ page-results {
         margin: 2% auto;
         display: block;
         font-size: 0.7em;
+    }
+
+    .head{
+        background-color: transparent;
+        
+    }
+
+    .iconHolder{
+        border: dotted 0px black;
+        position: relative;
+        top:-13px;
+        height: 80px;
+        background-color: #22141C;
+        color: white;
     }
 }

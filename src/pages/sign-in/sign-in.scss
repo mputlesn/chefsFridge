@@ -3,7 +3,7 @@ page-sign-in {
         font-size: 0.9em;
         text-align: center;
         position: relative;
-        top: 40%;
+        top: 20%;
     }
     h1{
         text-align: center;
@@ -18,7 +18,7 @@ page-sign-in {
         position: relative;
         top: 30px;
         padding-left: 15%;
-        
+ 
     }
     .logo{
         display: block;
@@ -28,7 +28,7 @@ page-sign-in {
     .myLogo{
         width: 40%;
         position: relative;
-        left: 30%; 
+        left: 30%;
     }
     .signInText{
         border: solid 0px black;
@@ -52,7 +52,7 @@ page-sign-in {
         padding: 10%;
         width: 95%;
     }
-    
+ 
     .signInButton{
         position: relative;
         display: block;
@@ -74,7 +74,7 @@ page-sign-in {
         top: 40px;
         color: rgb(98, 133, 134);
     }
-
+ 
     @media screen and (min-width: 767px) and (max-width: 1024px) {
         .logoHolder{
             border: solid 0px black;
@@ -121,4 +121,4 @@ page-sign-in {
             font-size: 0.7em;
         }
     }
-}
+ }
