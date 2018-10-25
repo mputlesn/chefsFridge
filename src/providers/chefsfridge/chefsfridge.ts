@@ -26,6 +26,7 @@ export class ChefsfridgeProvider {
   arrupdate = [];
   condition: string;
   recipeObj:any;
+  ingred: any = []
 
   constructor(public http: HttpClient, public loadingCtrl: LoadingController, public toastCtrl: ToastController,public alertCtrl: AlertController) {
     console.log('Hello ChefsfridgeProvider Provider');
@@ -200,45 +201,67 @@ export class ChefsfridgeProvider {
     
   }
 
-  itemSearch(category, sub_category, items:any){
-    
+  retreiveRecipeIngred(){
+    return new Promise((resolve, reject)=>{
+        firebase.database().ref('recipes/').on('value', (data) =>{
+          var recipes = data.val();
+        var keys = Object.keys(recipes);
+        for (var i = 0; i < keys.length; i++) {
+          var k = keys[i];
+          var ingredients = recipes[k].ingredients;
+
+          this.ingred.push(ingredients);
+          console.log(this.ingred);
+          resolve(this.ingred);
+        }
+        })
+        
+    },
+    )
+  }
+
+  itemSearch(category, sub_category, items: any) {
+
     return new Promise((resolve, reject) => {
-      var  commonRecipes = [];
+      var commonRecipes = [];
       var ingredients = [];
       var temp = [];
       var temp2 = [];
       var temp3 = [];
       var count = 0;
       var searchedrecipe = [];
-      
-      firebase.database().ref('recipes/').on('value',(data)=>{
+      var tempItem = "";
+      var tempDB = ""
+      var countIngred = 0;
+
+      firebase.database().ref('recipes/').on('value', (data) => {
         var recipes = data.val();
         var keys = Object.keys(recipes);
-        for(var i = 0; i < keys.length; i++){
+        for (var i = 0; i < keys.length; i++) {
           var k = keys[i];
           // console.log(k);
-          if(recipes[k].category == category && recipes[k].sub_category == sub_category){
-            
-          var name = recipes[k].name;
-          var description = recipes[k].description
-          var ingredients = recipes[k].ingredients
-          var methods = recipes[k].directions
-          var image = recipes[k].image 
-          var likes = recipes[k].likes
-          var time = recipes[k].time
-          var serve = recipes[k].serve
-  
-          let obj = {
-            key: k,
-            name: name,
-            description: description,
-            ingredients: ingredients,
-            methods: methods,
-            image: image,
-            likes: likes,
-            time: time,
-            serve: serve
-          }
+          if (recipes[k].category == category && recipes[k].sub_category == sub_category) {
+
+            var name = recipes[k].name;
+            var description = recipes[k].description
+            var ingredients = recipes[k].ingredients
+            var methods = recipes[k].directions
+            var image = recipes[k].image
+            var likes = recipes[k].likes
+            var time = recipes[k].time
+            var serve = recipes[k].serve
+
+            let obj = {
+              key: k,
+              name: name,
+              description: description,
+              ingredients: ingredients,
+              methods: methods,
+              image: image,
+              likes: likes,
+              time: time,
+              serve: serve
+            }
             commonRecipes.push(obj);
             console.log(commonRecipes);
           }
@@ -247,43 +270,59 @@ export class ChefsfridgeProvider {
 
       setTimeout(() => {
         console.log("new recipe");
-        for (let i = 0; i < commonRecipes.length; i++){
-         ingredients = commonRecipes[i].ingredients;
-         console.log(ingredients);
-         count = 0;
-         console.log("Refreash "+count);
-         for (let b = 0; b < ingredients.length; b++) {
-           const element = ingredients[b];
-           console.log(element);
-           temp = element.split(",");
-           console.log(temp);
-           for (let c = 0; c < temp.length; c++) {
-            temp2 = temp[c].split(" ");
-            console.log(temp2);
-            for (let e = 0; e < temp2.length; e++) {
-              for (let j = 0; j < items.length; j++) {
-                temp3 = items[j].split(" ");
-                for (let k = 0; k < temp3.length; k++) {
-                  if(temp3[k] == temp2[e]){
+        
+        for (let i = 0; i < commonRecipes.length; i++) {
+          //get ingredients
+          ingredients = commonRecipes[i].ingredients;
+          console.log(ingredients);
+          count = 0;
+          console.log("Refreash " + count);
+          
+          for (let b = 0; b < ingredients.length; b++) {
+            //for each ingredients
+            const element = ingredients[b];
+            console.log(element);
+            //if the sentence ingredient at index b has a ',' split it
+            temp = element.split(",");
+            console.log(temp);
+            for (let c = 0; c < temp.length; c++) {
+              //if the sentence ingredient at index c has a ' ' split it
+              temp2 = temp[c].split(" ");
+              console.log(temp2);
+              for (let e = 0; e < temp2.length; e++) {
+
+                for (let f = 0; f < items.length; f++) {
+                  //Loop through my items array and compare with the ingredients from the database
+                  tempDB = temp2[e].toUpperCase();
+                  tempItem = items[f].toUpperCase();
+                  console.log(tempDB);
+                  console.log(tempItem);
+                  if (tempItem == tempDB) {
                     count += 1;
-                    console.log("Count "+count);
-                    console.log('item found');
-                    if(count <= 1){
-                          console.log("New search");
-                          searchedrecipe.push(commonRecipes[i]);
-                          console.log(searchedrecipe);
-                        }
+
+                    console.log("Count " + count);
+                    console.log(count+' items found in this index');
+
+                    if (count >= 2) {
+                      countIngred += 1
+                      console.log(countIngred);
+                      
+                      //if count is less or 
+                      console.log("New search");
+                      searchedrecipe.push(commonRecipes[i]);
+                      console.log(searchedrecipe);
+                    }
                   }
-     
+
                 }
-               }
-             }
-           }
-         }
-       }
+               
+              }
+            }
+          }
+        }
       }, 3000)
-   
-    resolve(searchedrecipe);
+
+      resolve(searchedrecipe);
     });
   }
  

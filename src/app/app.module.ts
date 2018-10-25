@@ -15,6 +15,9 @@ import { ResultsPage } from '../pages/results/results';
 import { ViewPage } from '../pages/view/view';
 import { ConfirmPage } from '../pages/confirm/confirm';
 
+import {RlTagInputModule} from 'angular2-tag-input';
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -29,6 +32,7 @@ import { ConfirmPage } from '../pages/confirm/confirm';
   imports: [
     BrowserModule,
     HttpClientModule,
+    RlTagInputModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],

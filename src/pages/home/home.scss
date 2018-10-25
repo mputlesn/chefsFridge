@@ -1,127 +1,189 @@
 page-home {
-.up{
-    height: 14em;
-    // max-height: 40%;
-    background-color: #55141C;
-    margin-bottom: 1em;
-    box-shadow: 2px 5px 7px rgba(0, 0,0, .5);
-}
-.down{
-    height: 60%;
-    max-height: 60%;
-    padding-top: 45%;
-    margin-left: 14%;
-    margin-right: 14%;
-}
+    .up{
+        height: 14em;
+        // max-height: 40%;
+        background-color: #55141C;
+        margin-bottom: 1em;
+        box-shadow: 2px 5px 7px rgba(0, 0,0, .5);
+    }
+    .down{
+        height: 60%;
+        max-height: 60%;
+        padding-top: 41%;
+    }
+    .img{
+        height: 15em;
+        width: 90%;
+        position: relative;
+        top: 20%;
+        display: block;
+        margin: 0 auto;
+        background: linear-gradient(360deg, rgba(rgb(44, 6, 11), .9), transparent),url('../../assets/imgs/food.png');
+        background-size: cover;
+        border-radius: 2em;
+        display: flex;
+        align-items: center;
+        box-shadow: 2px 5px 7px rgba(0, 0,0, .5);
+        margin-top: -20px;
+    }
+    img{
+        border-radius: 25px;
+        display: block;
+        margin: 0 auto;
+        margin-top: 0px;
+    }
 
-.img{
-    height: 15em;
-    width: 90%;
-    position: relative;
-    top: 20%;
-    display: block;
-    margin: 0 auto;
-    background: linear-gradient(360deg, rgba(rgb(44, 6, 11), .9), transparent),url('../../assets/imgs/food.png');
-    background-size: cover;
-    border-radius: 2em;
-    display: flex;
-    align-items: center;
-    box-shadow: 2px 5px 7px rgba(0, 0,0, .5);
-}
+    .ques{
+        color: white
+    }
+    .input{
+        background-color: transparent;
+        border-radius: 25px;
+        margin-top: 0.8em;
+        color: white !important;
+    }
+    .input1{
+        background-color: transparent;
+        border-radius: 25px;
+        margin-top: 40px;
+        color: white !important;
+    }
+    .cat{
+        margin-left: 10%;
+        margin-right: 8%;
+        margin-bottom: 2%;
+    }
+    .name{
+        color: white;
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 1.2em;
+        padding-top:1em;
+    }
+    .name2{
+        color: white;
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size:1.2em
+    }
+    .items{
+        height: 120px;
+        width: 80%;
+        // background: rgba(black, 0.6);
+        border-radius: 25px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 5px;
+        font-weight: 700;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-top: 0px;
+        
+    }
+    .icon{
+        border-radius: 15px;
+        box-shadow: 2px 1px 8px rgba(#55141C, 0.9);
+        margin: 0 auto;
+        width: 65px;
+        height: 5.5em;
 
-img{
-    border-radius: 25px;
-    display: block;
-    margin: 0 auto;
-}
-.input{
-    background-color: transparent;
-    border-radius: 25px;
-    margin-top: 0.5em;
-    color: white !important;
-}
+    }
+    .sleve{
+        display: block;
+        margin: 0 auto;
+        background-color: #55141C;
+        height: 0.2em;
+        width: 70%;
+        
+    }
+    .sub{
+        display: block;
+        
+    //    margin-left: 2%;
+    //    margin-right: 5%
+    }
+    .iconImage{
+        margin-top: -8px;
+        padding-top: 5px;
 
-.cat{
-    color: white
-}
-.name{
-    color: white;
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1.2em;
-    padding-top:1em;
-}
-.name2{
-    color: white;
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1.5em
-}
+    }
+    div.icon:hover{
+        background:rgba(#665D64, 0.2 );
+    }
+    div.icon:focus{
+        background:rgba(#55141C, 0.9);
+    }
+    div.iconsCat:hover{
+        background:rgba(#665D64, 0.2 );
+    }
+    div.iconsCat:focus{
+        background:rgba(#55141C, 0.9);
+    }
+    .btn{
+        display: block;
+        margin: 0 auto;
+        width: 80%;
+        border-radius: 2.5em;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .text{
+        font-weight: bold;
+        font-size: 0.8em;
+        text-align: center;
+        margin-top: -5px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .iconsCat{
+        border-radius: 15px;
+        box-shadow: 2px 1px 8px rgba(#55141C, 0.9);
+        margin: 2%;
+        height: 5em;
+        width: 5em;
+        // border: solid 2px #55141C;
+        background-color: white;
+        // font-size: 1.1em;
+        
+        
+    }
+    .row1{
+        width: 80%;
+    }
+    .empty{
+        text-align: center;
+        margin-top: 3em;
+        font-size: 1.5em;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    // .imgz{
 
-.items{
-    height: 120px;
-    width: 80%;
-    // background: rgba(black, 0.6);
-    border-radius: 25px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 5px;
-    font-weight: 700;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+    // }
+    .categoryIcons{
+       text-align: center;
+        margin-top: -15%;
 
-.icon{
-    border-radius: 15px;
-    width: 8em;
-    box-shadow: 2px 1px 8px rgba(#55141C, 0.9);
-    margin: 0.6em auto;
-}
+    }
+    // .iconText{
+    //     color: #55141C;
+    //     font-size: 1em;
+    // }
+    .gridIcons{
+     margin: 0 auto;
+    //  border: 2px solid red;
+     text-align: center;
+    }
+    ::placeholder {
+        color: white;
+        opacity: 1; /* Firefox */
+    }
 
-div.icon:hover{
-    background:rgba(#665D64, 0.2 );
-}
-
-
-div.icon:focus{
-    background:rgba(#55141C, 0.9);
-}
-
-.btn{
-    display: block;
-    margin: 0 auto;
-    width: 80%;
-    border-radius: 2.5em;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.text{
-    font-size: 0.8em;
-    text-align: center;
-    margin-top: -5px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.iconsCat{
-    border-radius: 15px;
-    width: 60px;
-    box-shadow: 2px 1px 8px rgba(#55141C, 0.9);
-    margin: 5% auto;
-}
-
-.row1{
-    width: 80%;
-}
-
-.empty{
-    text-align: center;
-    margin-top: 2em;
-    font-size: 1.5em;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-
-
-
-}
+    .search{
+        display: block;
+        margin: 0 auto;
+        width: 70%;
+        border-radius: 2em;
+        font-size: 1em;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
 
+    }
+    

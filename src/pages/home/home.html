@@ -1,71 +1,134 @@
 <ion-content>
-  <div class="up">
-    <div class="name"><img src="../../assets/icon/hat logo.PNG" width="60px" height="60px">
-    </div>
-    <div class="name2">
-        chefsFridge
-    </div>
-    <div class="img">
-      <!-- <img src="../../assets/imgs/food.png" alt=""> -->
-      <div class="items">
-        <p class="cat">Choose a category</p>
-          <ion-item class="input">
-              <ion-label color="light">Category</ion-label>
-              <ion-select [(ngModel)]="cat">
-                  <ion-option value="Vegan">Vegan</ion-option>
-                  <ion-option value="Vegeterian">Vegeterian</ion-option>
-                  <ion-option value="Meat Lover">Meat Lover</ion-option>
-              </ion-select>
-          </ion-item>
-        <!-- <p>Whats in your fridge?</p>
-        <ion-input class="input" type="text"></ion-input> -->
-      </div>
+    <div class="up">
+        <div class="name">
+            <img src="../../assets/icon/hat logo.PNG" width="40px" height="40px">
+        </div>
+        <div class="name2">
+            chefsFridge
+        </div>
+        <div class="img">
+            <!-- <img src="../../assets/imgs/food.png" alt=""> -->
+            <div class="items">
+                <div class="ques">Whats in your Fridge?</div>
+                <ion-item class="input1">
+                    <ion-input type="text" placeholder="Add Items" spellcheck="true" autocomplete="true" [(ngModel)]="items"></ion-input>
+                </ion-item>
+            </div>
+        </div>
+
     </div>
 
-  </div>
-  <div class="down">
-      <ng-container *ngIf=" cat == ''; then empty; else other">
-      </ng-container>
-      <ng-template #empty>
-          <div class="empty">
-            Hi {{name}}<br> We are happy to have you!<br> Get ready for delicious recipes and food inspirations at the tip of your finger.
-         </div>
-      </ng-template>
-      <ng-template #other>
-          <ion-grid>
-              <ion-row class="animated  rotateInUpLeft delay-2s">
+    <div class="down">
+        <div class="cat">
+            <ion-grid class="categoryIcons">
+                <ion-row class="animated  headShake delay-2s headShake delay-5s">
+                    <ion-col col-4>
+                        <div class="iconsCat" id="" (click)="cat('Vegan')">
+                            <img src="../../assets/imgs/iconvegan.png" width="50px" height="50px">
+                            <p class="text"> Vegan</p>
+                        </div>
+                    </ion-col>
+                    <ion-col col-4>
+                        <div class="iconsCat" id="" (click)="cat('Meat Lover')">
+                            <img src="../../assets/imgs/iconmeat2.png" width="50px" height="50px">
+                            <p class="text"> Meat lover</p>
+                        </div>
+                    </ion-col>
+                    <ion-col col-4>
+                        <div class="iconsCat" id="" (click)="cat('Vegeterian')">
+                            <img src="../../assets/imgs/iconvegan.png" width="50px" height="50px">
+                            <p class="text"> Vegetarian</p>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+
+
+        <div class="sleve"></div>
+
+        <!-- <span class="categoryIcons">
+                  <img src="../../assets/imgs/iconvegetarian.png" width="35px" height="35px" class="imgz">
+                  <p class="iconText"> Vegan</p>
+              </span>
+              <span class="categoryIcons">
+                <img src="../../assets/imgs/iconmeat.png" width="35px" height="35px">
+                <p class="iconText"> Meat lover</p>
+            </span>
+              <span class="categoryIcons">
+                  <img src="../../assets/imgs/iconvegetarian.png" width="35px" height="35px">
+                  <p class="iconText"> Vegetarian</p>
+              </span> -->
+        <div class="sub">
+            <ion-grid class="gridIcons">
+                <ion-row padding class="animated  headShake delay-10s">
+                    <ion-col>
+                        <div class="icon" (click)="sub('Breakfast')">
+                            <img src="../../assets/imgs/icons8-cafe-48.png" class="iconImage">
+                            <p class="text">Breakfast</p>
+                        </div>
+                    </ion-col>
+                    <ion-col>
+                        <div class="icon" (click)="sub('Lunch')">
+                            <img src="../../assets/imgs/icons8-wrap-48.png" class="iconImage">
+                        <p class="text">Lunch</p>
+                        </div>
+                        
+                    </ion-col>
+                    <ion-col>
+                        <div class="icon" (click)="sub('Dinner')">
+                            <img src="../../assets/imgs/icons8-spaghetti-50.png" class="iconImage">
+                        <p class="text">Dinner</p>
+                        </div>
+                        
+                    </ion-col>
+                    <ion-col>
+                        <div class="icon" (click)="sub('Dessert')">
+                          <img src="../../assets/imgs/icons8-banana-split-48.png" class="iconImage">
+                        <p class="text">Dessert</p>  
+                        </div>
+                        
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+
+        <!-- <ion-grid class="gridIcons">
+            <ion-row class="animated  rotateInUpLeft delay-2s">
                 <div class="icon" id="" (click)="sub_cat('Breakfast')">
                     <ion-col col-6>
-                        <img  src="../../assets/imgs/icons8-cafe-48.png">
+                        <img src="../../assets/imgs/icons8-cafe-48.png" class="iconImage">
                         <p class="text">Breakfast</p>
-                      </ion-col>
+                    </ion-col>
                 </div>
                 <div class="icon" id="" (click)="sub_cat('Lunch')">
                     <ion-col col-6>
-                        <img src="../../assets/imgs/icons8-wrap-48.png">
+                        <img src="../../assets/imgs/icons8-wrap-48.png" class="iconImage">
                         <p class="text">Lunch</p>
-                      </ion-col>
+                    </ion-col>
                 </div>
-                
-              </ion-row>
-              <ion-row class="animated  rotateInDownRight delay-2s">
-                  <div class="icon" id="" (click)="sub_cat('Dinner')">
-                      <ion-col col-6>
-                          <img src="../../assets/imgs/icons8-spaghetti-50.png">
-                          <p class="text">Dinner</p>
-                        </ion-col>
-                  </div>
-                  <div class="icon" id="" (click)="sub_cat('Dessert')">
-                      <ion-col col-6>
-                          <img src="../../assets/imgs/icons8-banana-split-48.png">
-                          <p class="text">Dessert</p>
-                        </ion-col>
-                  </div>
-              </ion-row>
-            </ion-grid>
-            <!-- <button ion-button class="btn" (click)="search()">search</button> -->
-      </ng-template> 
 
-      
-  </div>
+            </ion-row>
+            <ion-row class="animated  rotateInDownRight delay-2s">
+                <div class="icon" id="" (click)="sub_cat('Dinner')">
+                    <ion-col col-6>
+                        <img src="../../assets/imgs/icons8-spaghetti-50.png" class="iconImage">
+                        <p class="text">Dinner</p>
+                    </ion-col>
+                </div>
+                <div class="icon" id="" (click)="sub_cat('Dessert')">
+                    <ion-col col-6>
+                        <img src="../../assets/imgs/icons8-banana-split-48.png" class="iconImage">
+                        <p class="text">Dessert</p>
+                    </ion-col>
+                </div>
+            </ion-row>
+        </ion-grid> -->
+
+        <button ion-button class="search" (click)="search()">Search</button>
+
+    </div>
+
+
+
 </ion-content>

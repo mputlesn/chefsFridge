@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
-import { user } from '../../interfaces/user';
 import { ChefsfridgeProvider } from '../../providers/chefsfridge/chefsfridge';
 import { ViewPage } from '../view/view';
 import { SearchPage } from '../search/search';
@@ -21,7 +20,7 @@ export class ResultsPage {
 
   category: string = this.navParams.get("cat");
   sub: string = this.navParams.get("sub");
-  items : any = this.navParams.get("item");
+  items : any = this.navParams.get("items");
   recipes: any = [];
   arr = itemArr;
 
@@ -50,11 +49,7 @@ export class ResultsPage {
    }
 
    back(){
-    var obj={
-        cat: this.arr[0].cat,
-        sub: this.arr[0].sub
-     }
-     this.navCtrl.push(SearchPage, obj);
+     this.navCtrl.pop();
    }
 
 }
