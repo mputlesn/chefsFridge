@@ -13,7 +13,7 @@ import { SearchPage } from '../pages/search/search';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage: any = SearchPage;
+  rootPage: any = HomePage;
   showSplash = true;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, chefsFridge: ChefsfridgeProvider) {

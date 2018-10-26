@@ -1,21 +1,68 @@
 page-home {
+
+    // [_nghost-c1] {
+    //     background-color: transparent;
+    //     border-radius: 40px;
+    //     color: #fff;
+    // }
+    // [_nghost-c1] .ng2-tag-input-remove[_ngcontent-c1] {
+    //     color: color($colors, primary);
+    //     background: transparent;
+    //     height: 20px;
+    //     width: 20px;
+    //     line-height: 20px;
+    // }
+
+    input.ng2-tag-input-field.ng-valid.ng-dirty.ng-touched{
+        background-color: transparent;
+        color: white;
+        font-size: 1em;
+        // margin-top: 15%;
+        color: white;
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 500;
+    }
+    
+    rl-tag-input{
+        background-color: transparent;
+        color: white;
+        font-size: 1em;
+        margin-top: 20%;
+        color: white;
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 500;
+    }
+
+    input.ng2-tag-input-field.ng-untouched.ng-pristine.ng-valid{
+        background-color: transparent;
+        color: white;
+        font-size: 1em;
+        // margin-top: 15%;
+        color: white;
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 500;
+    }
+
     .up{
-        height: 14em;
+        height: 15em;
         // max-height: 40%;
         background-color: #55141C;
-        margin-bottom: 1em;
+        margin-bottom: 2em;
         box-shadow: 2px 5px 7px rgba(0, 0,0, .5);
     }
     .down{
         height: 60%;
         max-height: 60%;
-        padding-top: 41%;
+        padding-top: 45%;
     }
     .img{
         height: 15em;
         width: 90%;
         position: relative;
-        top: 20%;
+        top: 30%;
         display: block;
         margin: 0 auto;
         background: linear-gradient(360deg, rgba(rgb(44, 6, 11), .9), transparent),url('../../assets/imgs/food.png');
@@ -26,11 +73,12 @@ page-home {
         box-shadow: 2px 5px 7px rgba(0, 0,0, .5);
         margin-top: -20px;
     }
-    img{
-        border-radius: 25px;
+    
+    .ico{
         display: block;
-        margin: 0 auto;
-        margin-top: 0px;
+        height: 30px;
+        width: 30px;
+        margin-left: 90%;
     }
 
     .ques{
@@ -58,7 +106,6 @@ page-home {
         text-align: center;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: 1.2em;
-        padding-top:1em;
     }
     .name2{
         color: white;

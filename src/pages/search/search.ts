@@ -32,9 +32,10 @@ export class SearchPage {
     '#CrossPlatform'
   ]
 
-  temp:any;
-
-  ingred:any;
+  temp:any = [];
+  temp2:any = [];
+  ingred:any = [];
+  temp3:any = [];
 
   addTalk() {
     this.talks.push({name: this.name, topics: this.topics});
@@ -48,6 +49,7 @@ export class SearchPage {
   }
 
   ionViewDidLoad() {
+
     this.chefsFridge.retreiveRecipeIngred().then((data)=>{
       console.log(data);
       this.ingred = data;
@@ -55,16 +57,40 @@ export class SearchPage {
       
     })
 
-    for (let i = 0; i < this.ingred.length; i++) {
-      for (let x = 0; x < this.ingred[i].length; x++) {
-        this.temp = this.ingred[i].split(",");
-        console.log(this.temp);
+    setTimeout(()=>{
+      for (let i = 0; i < this.ingred.length; i++) {
+        console.log("first for");
+        var a = this.ingred[i]
+        for (let x = 0; x < a.length; x++) {
+          console.log("first for");
+          var b = a[x]
+          console.log(b);
+
+          this.temp = b.split(",");
+          console.log(this.temp);
+            for (let j = 0; j < this.temp.length; j++) {
+              const element = this.temp[j];
+              var c = element.split(" ")
+              for (let k = 0; k < c.length; k++) {
+                if(c[k] != ""){
+                  this.temp3.push(c)
+                  this.preparedTags.push(c[k])
+                  console.log(this.preparedTags);
+                }
+                
+                
+              }
+            }
+          
+        }
         
       }
-      
-      
-    }
 
+    }, 3000)
+
+    
+
+    console.log("out");
     
     
   }

@@ -1,18 +1,28 @@
 <ion-content>
     <div class="up">
+            <div class="cnt">{{ count }}</div>
+            <div class="ico"><img src="../../assets/icon/icons/icons8-kitchen-50.png" (click)="presentPopover($event)"></div>
         <div class="name">
             <img src="../../assets/icon/hat logo.PNG" width="40px" height="40px">
         </div>
         <div class="name2">
             chefsFridge
         </div>
+
         <div class="img">
             <!-- <img src="../../assets/imgs/food.png" alt=""> -->
             <div class="items">
                 <div class="ques">Whats in your Fridge?</div>
-                <ion-item class="input1">
+                <!-- <ion-item class="input1">
                     <ion-input type="text" placeholder="Add Items" spellcheck="true" autocomplete="true" [(ngModel)]="items"></ion-input>
-                </ion-item>
+                </ion-item> -->
+                <rl-tag-input
+                [(ngModel)]="itemDis"
+                [addOnBlur]="false"
+                [autocomplete]="true"
+                [autocompleteItems]="IngredDB"
+                placeholder="Add Item">
+              </rl-tag-input>
             </div>
         </div>
 
@@ -47,18 +57,6 @@
 
         <div class="sleve"></div>
 
-        <!-- <span class="categoryIcons">
-                  <img src="../../assets/imgs/iconvegetarian.png" width="35px" height="35px" class="imgz">
-                  <p class="iconText"> Vegan</p>
-              </span>
-              <span class="categoryIcons">
-                <img src="../../assets/imgs/iconmeat.png" width="35px" height="35px">
-                <p class="iconText"> Meat lover</p>
-            </span>
-              <span class="categoryIcons">
-                  <img src="../../assets/imgs/iconvegetarian.png" width="35px" height="35px">
-                  <p class="iconText"> Vegetarian</p>
-              </span> -->
         <div class="sub">
             <ion-grid class="gridIcons">
                 <ion-row padding class="animated  headShake delay-10s">
@@ -93,39 +91,8 @@
             </ion-grid>
         </div>
 
-        <!-- <ion-grid class="gridIcons">
-            <ion-row class="animated  rotateInUpLeft delay-2s">
-                <div class="icon" id="" (click)="sub_cat('Breakfast')">
-                    <ion-col col-6>
-                        <img src="../../assets/imgs/icons8-cafe-48.png" class="iconImage">
-                        <p class="text">Breakfast</p>
-                    </ion-col>
-                </div>
-                <div class="icon" id="" (click)="sub_cat('Lunch')">
-                    <ion-col col-6>
-                        <img src="../../assets/imgs/icons8-wrap-48.png" class="iconImage">
-                        <p class="text">Lunch</p>
-                    </ion-col>
-                </div>
-
-            </ion-row>
-            <ion-row class="animated  rotateInDownRight delay-2s">
-                <div class="icon" id="" (click)="sub_cat('Dinner')">
-                    <ion-col col-6>
-                        <img src="../../assets/imgs/icons8-spaghetti-50.png" class="iconImage">
-                        <p class="text">Dinner</p>
-                    </ion-col>
-                </div>
-                <div class="icon" id="" (click)="sub_cat('Dessert')">
-                    <ion-col col-6>
-                        <img src="../../assets/imgs/icons8-banana-split-48.png" class="iconImage">
-                        <p class="text">Dessert</p>
-                    </ion-col>
-                </div>
-            </ion-row>
-        </ion-grid> -->
-
-        <button ion-button class="search" (click)="search()">Search</button>
+        
+        <!-- <button ion-button class="search" (click)="search()">Search</button> -->
 
     </div>
 
