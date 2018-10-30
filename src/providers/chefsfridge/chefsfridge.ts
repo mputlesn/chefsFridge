@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ToastController, LoadingController, AlertController} from 'ionic-angular';
 import { user } from '../../interfaces/user';
+import { Storage } from '@ionic/storage';
 
 declare var firebase;
 var auth = firebase.auth();
@@ -28,9 +29,11 @@ export class ChefsfridgeProvider {
   recipeObj:any;
   ingred: any = []
 
-  constructor(public http: HttpClient, public loadingCtrl: LoadingController, public toastCtrl: ToastController,public alertCtrl: AlertController) {
+  constructor(public http: HttpClient, public loadingCtrl: LoadingController, public toastCtrl: ToastController,public alertCtrl: AlertController, private storage: Storage) {
     console.log('Hello ChefsfridgeProvider Provider');
   }
+
+
 
   signIn(email,password){
     return new Promise((resolve, reject) => {
@@ -203,14 +206,14 @@ export class ChefsfridgeProvider {
 
   retreiveRecipeIngred(){
     return new Promise((resolve, reject)=>{
-        firebase.database().ref('recipes/').on('value', (data) =>{
+        firebase.database().ref('items/').on('value', (data) =>{
           var recipes = data.val();
         var keys = Object.keys(recipes);
         for (var i = 0; i < keys.length; i++) {
           var k = keys[i];
-          var ingredients = recipes[k].ingredients;
+          var item = recipes[k].item;
 
-          this.ingred.push(ingredients);
+          this.ingred.push(item);
           console.log(this.ingred);
           resolve(this.ingred);
         }
@@ -227,7 +230,6 @@ export class ChefsfridgeProvider {
       var ingredients = [];
       var temp = [];
       var temp2 = [];
-      var temp3 = [];
       var count = 0;
       var searchedrecipe = [];
       var tempItem = "";
@@ -239,7 +241,7 @@ export class ChefsfridgeProvider {
         var keys = Object.keys(recipes);
         for (var i = 0; i < keys.length; i++) {
           var k = keys[i];
-          // console.log(k);
+          console.log(k);
           if (recipes[k].category == category && recipes[k].sub_category == sub_category) {
 
             var name = recipes[k].name;
@@ -567,20 +569,31 @@ updateProfile(name, surname, bio){
     })
   }
 
+
+
   checkstate(){
     return new Promise((resolve, reject)=>{
-    firebase.auth().onAuthStateChanged((user)=>{
-      if(user != null){
-       //user signed in
-       this.condition = "yes"
-      } else {
-        //no user signed in
-        this.condition = "no"
-      }
-      resolve(this.condition)
+      this.storage.get('state').then((val) => {
+        console.log('user state is ', val);
+        resolve(val);
+      });
     })
- 
-  })
   }
+
+  // checkstate(){
+  //   return new Promise((resolve, reject)=>{
+  //   firebase.auth().onAuthStateChanged((user)=>{
+  //     if(user != null){
+  //      //user signed in
+  //      this.condition = "yes"
+  //     } else {
+  //       //no user signed in
+  //       this.condition = "no"
+  //     }
+  //     resolve(this.condition)
+  //   })
+ 
+  // })
+  // }
 
 }

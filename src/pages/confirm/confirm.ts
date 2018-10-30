@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController  } from 'ionic-angular';
-// import items from '../../interfaces/array';
 import { ResultsPage } from '../results/results';
 import cat from '../../interfaces/cat';
 /**
@@ -21,13 +20,14 @@ export class ConfirmPage {
   item: string;
   searchedrecipe = [];
   finalRecipe = [];
-  items = this.navParams.get('items');;
-  options = cat
-
+  items = this.navParams.get('items');
+  cat = this.navParams.get('cat');
+  sub = this.navParams.get('sub');
   constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {
     console.log("search info");
-    console.log(this.options);
     console.log(this.items);
+    console.log(this.sub);
+    console.log(this.cat);
   }
 
   ionViewDidLoad() {
@@ -38,14 +38,13 @@ export class ConfirmPage {
     this.items.splice(i, 1);
   }
   search(){
-    if(this.items.length>=5){
+    if(this.items.length>=3){
     
       console.log("search info");
-      console.log(this.options);
       console.log(this.items);
       var obj = {
-          cat: this.options[0].cat,
-          sub: this.options[0].sub,
+          cat: this.cat,
+          sub: this.sub,
           item: this.items,
    
       }
@@ -53,9 +52,8 @@ export class ConfirmPage {
     }
     else{
       const toast = this.toastCtrl.create({
-        message: 'Please choose more than 5 ingredients',
-        duration: 3000,
-        position:"top"
+        message: 'Please choose atleast 3 ingredients',
+        duration: 3000
       });
       toast.present();
 

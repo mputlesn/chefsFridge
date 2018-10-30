@@ -1,0 +1,22 @@
+page-intro {
+    .slider{
+        background: #55141C;
+        color: white;
+        .slide{
+            .slidecontent{
+                .image{
+                    height: 15em;
+                    width: 10em;
+                }
+                .heading{
+                    text-transform: capitalize;
+                    font-size: 1.5em;
+                }
+            }
+        }
+    }
+ 
+ .swiper-pagination-bullet{
+        background: white !important;
+    }
+}

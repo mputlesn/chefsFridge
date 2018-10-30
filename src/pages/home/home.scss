@@ -1,10 +1,9 @@
 page-home {
 
-    // [_nghost-c1] {
-    //     background-color: transparent;
-    //     border-radius: 40px;
-    //     color: #fff;
-    // }
+    [_nghost-c1] {
+     
+        display: none;
+    }
     // [_nghost-c1] .ng2-tag-input-remove[_ngcontent-c1] {
     //     color: color($colors, primary);
     //     background: transparent;
@@ -13,34 +12,59 @@ page-home {
     //     line-height: 20px;
     // }
 
+    rl-tag-input{
+        background-color: transparent;
+        color: white;
+        font-size: 1em;
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 500;
+       
+    }
     input.ng2-tag-input-field.ng-valid.ng-dirty.ng-touched{
         background-color: transparent;
         color: white;
         font-size: 1em;
-        // margin-top: 15%;
-        color: white;
         text-align: center;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-weight: 500;
     }
     
-    rl-tag-input{
+    
+    input.ng2-tag-input-field.ng-untouched.ng-pristine.ng-valid{
         background-color: transparent;
         color: white;
         font-size: 1em;
-        margin-top: 20%;
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 500;
+    }
+    .ng2-tag-input-field.ng-valid.ng-dirty.ng-untouched{
+        background-color: transparent;
         color: white;
+        font-size: 1em;
         text-align: center;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-weight: 500;
     }
 
-    input.ng2-tag-input-field.ng-untouched.ng-pristine.ng-valid{
+    .textinput.ng-untouched.ng-pristine.ng-valid{
+        background-color: transparent;
+        font-size: 1em;
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 500;
+    }
+
+    .textinput{
+        position: relative;
+        top: 1.5em;
+    }
+
+    input.ng2-tag-input-field.ng-pristine.ng-valid.ng-touched{
         background-color: transparent;
         color: white;
         font-size: 1em;
-        // margin-top: 15%;
-        color: white;
         text-align: center;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-weight: 500;
@@ -48,7 +72,6 @@ page-home {
 
     .up{
         height: 15em;
-        // max-height: 40%;
         background-color: #55141C;
         margin-bottom: 2em;
         box-shadow: 2px 5px 7px rgba(0, 0,0, .5);
@@ -56,13 +79,13 @@ page-home {
     .down{
         height: 60%;
         max-height: 60%;
-        padding-top: 45%;
+        padding-top: 40%;
     }
     .img{
         height: 15em;
         width: 90%;
         position: relative;
-        top: 30%;
+        top: 23%;
         display: block;
         margin: 0 auto;
         background: linear-gradient(360deg, rgba(rgb(44, 6, 11), .9), transparent),url('../../assets/imgs/food.png');
@@ -73,12 +96,43 @@ page-home {
         box-shadow: 2px 5px 7px rgba(0, 0,0, .5);
         margin-top: -20px;
     }
+
+
+    .imgs{
+        height: 50px;
+        width: 50px;
+        // position: block;
+        // margin: 0 auto;
+    }
     
     .ico{
-        display: block;
         height: 30px;
         width: 30px;
-        margin-left: 90%;
+        margin-left: 88%;
+        margin-top: -9.5em;
+    }
+
+    .iconImage2{
+        position: relative;
+        left: 43%;
+        top: 0px;
+    }
+
+    .iconImage3{
+        position: relative;
+        left: 25%;
+        top: 5px;
+    }
+    .cnt{
+        position: relative;
+        background-color: rgb(182, 130, 61);
+        color: white;
+        width:5%;
+        text-align: center;
+        margin-left: 86%;
+        top: -8em;
+        border-radius: 1em;
+        font-size: 1em
     }
 
     .ques{
@@ -99,7 +153,7 @@ page-home {
     .cat{
         margin-left: 10%;
         margin-right: 8%;
-        margin-bottom: 2%;
+        margin-top: -20px;
     }
     .name{
         color: white;
@@ -126,27 +180,59 @@ page-home {
         margin-top: 0px;
         
     }
+
+    // .icon{
+    //     border-radius: 15px;
+    //     width: 8em;
+    //     box-shadow: 2px 1px 8px rgba(#55141C, 0.9);
+    //     margin: 0.6em auto;
+    // }
     .icon{
         border-radius: 15px;
+        width: 47%;
+        height: 100px;
         box-shadow: 2px 1px 8px rgba(#55141C, 0.9);
-        margin: 0 auto;
-        width: 65px;
-        height: 5.5em;
+        margin: 0.8em auto;
+        margin-left: 0px;
+        border:solid 0px #55141C;
+       
+    }
+    // .icon{
+    //     border-radius: 15px;
+    //     box-shadow: 2px 1px 8px rgba(#55141C, 0.9);
+    //     margin: 0 auto;
+    //     width: 65px;
+    //     height: 5.5em;
 
+    // }
+
+    .refresh{
+        color: white;
+        font-size: 2.2em;
+        padding: 3%;
+        margin-top: -1%;
+        font-weight: 100;
     }
-    .sleve{
-        display: block;
-        margin: 0 auto;
-        background-color: #55141C;
-        height: 0.2em;
-        width: 70%;
+    // .sleve{
+    //     display: block;
+    //     margin: 0 auto;
+    //     background-color: #55141C;
+    //     height: 0.2em;
+    //     width: 70%;
         
-    }
+    // }
     .sub{
-        display: block;
         
-    //    margin-left: 2%;
-    //    margin-right: 5%
+        // border:solid 2px #55141C;
+       margin-left: 15%;
+       margin-right: 15%;
+       padding-left: 3%;
+       padding-right: 2%;
+       margin-top: -5%;
+    }
+
+    .iconRow{
+        // margin-top: -30px;
     }
     .iconImage{
         margin-top: -8px;
@@ -174,20 +260,30 @@ page-home {
     }
     .text{
         font-weight: bold;
-        font-size: 0.8em;
+        font-size: 1.2em;
+        color: #55141C;
         text-align: center;
         margin-top: -5px;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+
+    .text2{
+        font-weight: bold;
+        font-size: 1.2em;
+        color: #55141C;
+        text-align: center;
+        margin-top: 7px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
     .iconsCat{
-        border-radius: 15px;
+        border-radius: 20px;
         box-shadow: 2px 1px 8px rgba(#55141C, 0.9);
         margin: 2%;
-        height: 5em;
-        width: 5em;
+        height: 80px;
         // border: solid 2px #55141C;
         background-color: white;
         // font-size: 1.1em;
+        border:solid 1px #55141C;
         
         
     }
@@ -205,7 +301,7 @@ page-home {
     // }
     .categoryIcons{
        text-align: center;
-        margin-top: -15%;
+        
 
     }
     // .iconText{
@@ -213,7 +309,7 @@ page-home {
     //     font-size: 1em;
     // }
     .gridIcons{
-     margin: 0 auto;
+    
     //  border: 2px solid red;
      text-align: center;
     }
@@ -229,6 +325,30 @@ page-home {
         border-radius: 2em;
         font-size: 1em;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    [_nghost-c2]{
+        position: relative;
+        // overflow-y: scroll;
+        // overflow-x: scroll;
+        left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    will-change: scroll-position;
+    opacity: 1;
+    height: 100px;
+    }
+    .scroll-content{
+        position: fixed;
+        overflow-x: hidden;
+        overflow-y: hidden;
     }
 
 

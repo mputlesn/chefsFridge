@@ -8,12 +8,12 @@ import { SignInPage } from '../pages/sign-in/sign-in';
 import { timer } from 'rxjs/observable/timer';
 import { ResultsPage } from '../pages/results/results';
 import { SearchPage } from '../pages/search/search';
-
+import { IntroPage } from '../pages/intro/intro'
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage: any = HomePage;
+  rootPage: any;
   showSplash = true;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, chefsFridge: ChefsfridgeProvider) {
@@ -25,16 +25,18 @@ export class MyApp {
       timer(3000).subscribe(() => this.showSplash = false)
     });
 
-    // chefsFridge.checkstate().then((data: any) => {
+    chefsFridge.checkstate().then((data: any) => {
+      console.log(data);
+      
 
-    //   if (data == "yes") {
-    //     this.rootPage = HomePage;
+      if (data == "seen") {
+        this.rootPage = HomePage;
 
-    //   }
-    //   else {
-    //     this.rootPage = SignInPage
-    //   }
-    // })
+      }
+      else {
+        this.rootPage = IntroPage
+      }
+    })
   }
 
 }

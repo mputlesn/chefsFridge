@@ -14,9 +14,10 @@ import { SearchPage } from '../pages/search/search';
 import { ResultsPage } from '../pages/results/results';
 import { ViewPage } from '../pages/view/view';
 import { ConfirmPage } from '../pages/confirm/confirm';
+import { IntroPage } from '../pages/intro/intro';
 
 import {RlTagInputModule} from 'angular2-tag-input';
-
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [
@@ -27,13 +28,15 @@ import {RlTagInputModule} from 'angular2-tag-input';
     SearchPage,
     ResultsPage,
     ViewPage,
-    ConfirmPage
+    ConfirmPage,
+    IntroPage
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RlTagInputModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -44,7 +47,8 @@ import {RlTagInputModule} from 'angular2-tag-input';
     SearchPage,
     ResultsPage,
     ViewPage,
-    ConfirmPage
+    ConfirmPage,
+    IntroPage
   ],
   providers: [
     StatusBar,

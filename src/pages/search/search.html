@@ -7,7 +7,10 @@
       </ion-header>
        
       <ion-content padding>
-        <ion-item no-padding>
+        <ion-input type="text" [(ngModel)]="item"></ion-input>
+
+        <button (click)="addItem()">Add Item</button>
+        <!-- <ion-item no-padding>
       <ion-input [(ngModel)]="name" placeholder="My Awesome Talk"></ion-input>
       </ion-item>
      
@@ -33,6 +36,6 @@
       <ion-card *ngIf="talks.length === 0">
         <ion-card-content>No Talk found.</ion-card-content>
       </ion-card>
-       
+        -->
 
       </ion-content>

@@ -7,6 +7,8 @@ import { PopoverController } from 'ionic-angular';
 import cat from '../../interfaces/cat';
 import itemArr from '../../interfaces/itemArr';
 import { HomePage } from '../home/home';
+
+declare var firebase;
 /**
  * Generated class for the SearchPage page.
  *
@@ -36,16 +38,25 @@ export class SearchPage {
   temp2:any = [];
   ingred:any = [];
   temp3:any = [];
+  item:string
 
   addTalk() {
     this.talks.push({name: this.name, topics: this.topics});
   }
+
+  
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private chefsFridge: ChefsfridgeProvider, public popoverCtrl: PopoverController, public toastCtrl: ToastController) {
 
    
     
     
+  }
+
+  addItem(){
+    firebase.database().ref("items").push({
+      item: this.item
+    })
   }
 
   ionViewDidLoad() {
