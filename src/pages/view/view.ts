@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ChefsfridgeProvider } from '../../providers/chefsfridge/chefsfridge';
-import { HomePage } from '../home/home'
 /**
  * Generated class for the ViewPage page.
  *

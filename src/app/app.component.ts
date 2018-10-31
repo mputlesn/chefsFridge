@@ -4,9 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ChefsfridgeProvider } from '../providers/chefsfridge/chefsfridge';
 import { HomePage } from '../pages/home/home';
-import { SignInPage } from '../pages/sign-in/sign-in';
 import { timer } from 'rxjs/observable/timer';
-import { ResultsPage } from '../pages/results/results';
 import { SearchPage } from '../pages/search/search';
 import { IntroPage } from '../pages/intro/intro'
 @Component({

@@ -35,26 +35,26 @@ export class ChefsfridgeProvider {
 
 
 
-  signIn(email,password){
-    return new Promise((resolve, reject) => {
-      firebase.auth().signInWithEmailAndPassword(email, password).then(()=>{
-        this.userID = firebase.auth().currentUser.uid;
-        resolve() ;
-        const loader = this.loadingCtrl.create({
-        content:"please wait",
-        duration:1000
-        });
-        loader.present();
-       }, (error)=>{
-        const toast = this.toastCtrl.create({
-          message: error.message,
-          duration: 3000
-        });
-        toast.present();
-      })
-    })
+  // signIn(email,password){
+  //   return new Promise((resolve, reject) => {
+  //     firebase.auth().signInWithEmailAndPassword(email, password).then(()=>{
+  //       this.userID = firebase.auth().currentUser.uid;
+  //       resolve() ;
+  //       const loader = this.loadingCtrl.create({
+  //       content:"please wait",
+  //       duration:1000
+  //       });
+  //       loader.present();
+  //      }, (error)=>{
+  //       const toast = this.toastCtrl.create({
+  //         message: error.message,
+  //         duration: 3000
+  //       });
+  //       toast.present();
+  //     })
+  //   })
 
-   }
+  //  }
 
   //  profile(id:string){
 
@@ -66,80 +66,80 @@ export class ChefsfridgeProvider {
 
   //  }
 
-   SignUp(email ,password ,name ,surname){
-    return new Promise((resolve,reject) => {
-      //Create a user account with the email and password
-      firebase.auth().createUserWithEmailAndPassword(email, password).then(()=>{
-        //add the default image for the user profile
-        // firebase.storage().ref().child('default profile.png').getDownloadURL().then((url)=>{
-        //   this.url = url;
-        // })
-        //signing the user in
-        firebase.auth().signInWithEmailAndPassword(email , password).then(()=>{
-          var uid = firebase.auth().currentUser.uid;
-          //setting user info in the database
-          firebase.database().ref('users/'+uid).set({
-            name: name,
-            surname: surname,
-            email:email,
-            url: 'http://www.dealnetcapital.com/files/2014/10/blank-profile.png'
-          })
-          const toast = this.toastCtrl.create({
-            message: "Account Created",
-            duration: 3000
-          });
-          toast.present();
-        }, (error)=>{
-          console.log(error);
-          })
-          resolve();
-      }, (error)=>{
-        const toast = this.toastCtrl.create({
-          message:error.message,
-          duration: 3000
-        });
-        toast.present();
-      })
-      });
-  }
+  //  SignUp(email ,password ,name ,surname){
+  //   return new Promise((resolve,reject) => {
+  //     //Create a user account with the email and password
+  //     firebase.auth().createUserWithEmailAndPassword(email, password).then(()=>{
+  //       //add the default image for the user profile
+  //       // firebase.storage().ref().child('default profile.png').getDownloadURL().then((url)=>{
+  //       //   this.url = url;
+  //       // })
+  //       //signing the user in
+  //       firebase.auth().signInWithEmailAndPassword(email , password).then(()=>{
+  //         var uid = firebase.auth().currentUser.uid;
+  //         //setting user info in the database
+  //         firebase.database().ref('users/'+uid).set({
+  //           name: name,
+  //           surname: surname,
+  //           email:email,
+  //           url: 'http://www.dealnetcapital.com/files/2014/10/blank-profile.png'
+  //         })
+  //         const toast = this.toastCtrl.create({
+  //           message: "Account Created",
+  //           duration: 3000
+  //         });
+  //         toast.present();
+  //       }, (error)=>{
+  //         console.log(error);
+  //         })
+  //         resolve();
+  //     }, (error)=>{
+  //       const toast = this.toastCtrl.create({
+  //         message:error.message,
+  //         duration: 3000
+  //       });
+  //       toast.present();
+  //     })
+  //     });
+  // }
 
-  userResetPassword(){
-    const prompt = this.alertCtrl.create({
-      title: 'Reset password',
-      message: "Please enter your email below...",
-      inputs: [
-        {
-          name: 'email',
-          placeholder: 'Email address'
-        },
-      ],
-      buttons: [
-        {
-          text: 'Cancel',
-          handler: data => {
-            console.log('Cancel clicked');
-          }
-        },
-        {
-          text: 'Reset',
-          handler: data => {
-            console.log('email address is ' + data.email);
-            this.resetPassword(data.email);
-          }
-        }
-      ]
-    });
-    prompt.present();
+  // userResetPassword(){
+  //   const prompt = this.alertCtrl.create({
+  //     title: 'Reset password',
+  //     message: "Please enter your email below...",
+  //     inputs: [
+  //       {
+  //         name: 'email',
+  //         placeholder: 'Email address'
+  //       },
+  //     ],
+  //     buttons: [
+  //       {
+  //         text: 'Cancel',
+  //         handler: data => {
+  //           console.log('Cancel clicked');
+  //         }
+  //       },
+  //       {
+  //         text: 'Reset',
+  //         handler: data => {
+  //           console.log('email address is ' + data.email);
+  //           this.resetPassword(data.email);
+  //         }
+  //       }
+  //     ]
+  //   });
+  //   prompt.present();
   
-  }
+  // }
 
-  resetPassword(email : any){
-    auth.sendPasswordResetEmail(email).then(function() {
+  // resetPassword(email : any){
+  //   auth.sendPasswordResetEmail(email).then(function() {
      
-    }).catch(function(error) {
-      // An error happened.
-    });
-  } 
+  //   }).catch(function(error) {
+  //     // An error happened.
+  //   });
+  // } 
 
   retrieveARecipe(key){
     return new Promise((resolve, reject) => {
@@ -151,12 +151,12 @@ export class ChefsfridgeProvider {
       ;})
   }
 
-  userLogOut(){
-    return new Promise((resolve, reject) => {
-      firebase.auth().signOut()
-      resolve();
-    })
-  }
+  // userLogOut(){
+  //   return new Promise((resolve, reject) => {
+  //     firebase.auth().signOut()
+  //     resolve();
+  //   })
+  // }
 
   retreiveRecipe(){
     return new Promise((resolve, reject) => {
@@ -308,11 +308,15 @@ export class ChefsfridgeProvider {
                     if (count >= 2) {
                       countIngred += 1
                       console.log(countIngred);
-                      
-                      //if count is less or 
+                      if(countIngred == 1){
+                        //if count is less or 
                       console.log("New search");
+                      console.log("add recipe");
                       searchedrecipe.push(commonRecipes[i]);
                       console.log(searchedrecipe);
+                      }
+                      
+                      
                     }
                   }
 
@@ -345,82 +349,82 @@ export class ChefsfridgeProvider {
       
   }
 //update
-updateProfile(name, surname, bio){
+// updateProfile(name, surname, bio){
 
-  var database = firebase.database();
-  var userid = firebase.auth().currentUser.uid;
-  if(name != "" && surname != "" && bio != ""){
-        // database.ref('users/'+this.userID).update({name: name,surname:surname});
-        var update = {
-          name: name,
-          surname: surname,
-          bio: bio
-        }
-        return firebase.database().ref('users/' + userid).update(update);
+//   var database = firebase.database();
+//   var userid = firebase.auth().currentUser.uid;
+//   if(name != "" && surname != "" && bio != ""){
+//         // database.ref('users/'+this.userID).update({name: name,surname:surname});
+//         var update = {
+//           name: name,
+//           surname: surname,
+//           bio: bio
+//         }
+//         return firebase.database().ref('users/' + userid).update(update);
     
-  }else 
-  if(name == ""){
-      if(bio != "" && surname != ""){
-        var updates = {
-          surname: surname,
-          bio: bio
-        }
-        return firebase.database().ref('users/' + userid).update(updates);
-      }else
-      if(bio == ""){
-        var updatess = {
-          surname: surname
-        }
-        return firebase.database().ref('users/' + userid).update(updatess);
-      }else
-      if(surname == ""){
-        var updatesss = {
-          bio: bio
-        }
-        return firebase.database().ref('users/' + userid).update(updatesss);
-      }
-  }else 
-  if(surname == ""){
-    if(bio != "" && name != ""){
-      var obj = {
-        name: name,
-        bio: bio
-      }
-      return firebase.database().ref('users/' + userid).update(obj);
-    }else
-    if(bio == ""){
-      var objs = {
-        name: name
-      }
-      return firebase.database().ref('users/' + userid).update(objs);
-    }else
-    if(name == ""){
-      var objss = {
-        bio: bio
-      }
-      return firebase.database().ref('users/' + userid).update(objss);
-    }
-  }else if(bio == ""){
-    if(surname != "" && name != ""){
-      var obj2 = {
-        name: name,
-        surname: surname
-      }
-      return firebase.database().ref('users/' + userid).update(obj2);
-    }else
-    if(surname == ""){
-      var obj2s = {
-        name: name
-      }
-      return firebase.database().ref('users/' + userid).update(obj2s);
-    }else
-    if(name == ""){
-      var obj2ss = {
-        surname: surname
-      }
-      return firebase.database().ref('users/' + userid).update(obj2ss);
-    }
-  }
+//   }else 
+//   if(name == ""){
+//       if(bio != "" && surname != ""){
+//         var updates = {
+//           surname: surname,
+//           bio: bio
+//         }
+//         return firebase.database().ref('users/' + userid).update(updates);
+//       }else
+//       if(bio == ""){
+//         var updatess = {
+//           surname: surname
+//         }
+//         return firebase.database().ref('users/' + userid).update(updatess);
+//       }else
+//       if(surname == ""){
+//         var updatesss = {
+//           bio: bio
+//         }
+//         return firebase.database().ref('users/' + userid).update(updatesss);
+//       }
+//   }else 
+//   if(surname == ""){
+//     if(bio != "" && name != ""){
+//       var obj = {
+//         name: name,
+//         bio: bio
+//       }
+//       return firebase.database().ref('users/' + userid).update(obj);
+//     }else
+//     if(bio == ""){
+//       var objs = {
+//         name: name
+//       }
+//       return firebase.database().ref('users/' + userid).update(objs);
+//     }else
+//     if(name == ""){
+//       var objss = {
+//         bio: bio
+//       }
+//       return firebase.database().ref('users/' + userid).update(objss);
+//     }
+//   }else if(bio == ""){
+//     if(surname != "" && name != ""){
+//       var obj2 = {
+//         name: name,
+//         surname: surname
+//       }
+//       return firebase.database().ref('users/' + userid).update(obj2);
+//     }else
+//     if(surname == ""){
+//       var obj2s = {
+//         name: name
+//       }
+//       return firebase.database().ref('users/' + userid).update(obj2s);
+//     }else
+//     if(name == ""){
+//       var obj2ss = {
+//         surname: surname
+//       }
+//       return firebase.database().ref('users/' + userid).update(obj2ss);
+//     }
+//   }
     
     
 
@@ -476,100 +480,98 @@ updateProfile(name, surname, bio){
 //     return firebase.database().ref('users/' + userid).update( updateddd);
 
 //   }
- }
+//  }
 
 
- addRecipe(recipe, uploadTask, ingredients, methods){
-  return new Promise((resolve, reject) => {
-    var msg;
-    uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
-      console.log("File available at", downloadURL);
+//  addRecipe(recipe, uploadTask, ingredients, methods){
+//   return new Promise((resolve, reject) => {
+//     var msg;
+//     uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+//       console.log("File available at", downloadURL);
 
-      firebase.auth().onAuthStateChanged(user => {
-        if (user) {
-          console.log("User has sign in");
-          let userID = firebase.auth().currentUser.uid;
-          let obj = {
-            url: downloadURL
-          };
-          firebase.database().ref('recipes/').push({
-            category: recipe.category,
-            sub_category: recipe.sub_category,
-            name: recipe.name,
-            image: downloadURL,
-            ingredients: ingredients,
-            directions: methods,
-            userID: userID,
-            serve: recipe.serve,
-            time: recipe.time
-          },(error)=>{
-            if (error) {
-              // The write failed...
-              msg = " please try uploading again...";
-              console.log(error+" please try uploading again...");
+//       firebase.auth().onAuthStateChanged(user => {
+//         if (user) {
+//           console.log("User has sign in");
+//           let userID = firebase.auth().currentUser.uid;
+//           let obj = {
+//             url: downloadURL
+//           };
+//           firebase.database().ref('recipes/').push({
+//             category: recipe.category,
+//             sub_category: recipe.sub_category,
+//             name: recipe.name,
+//             image: downloadURL,
+//             ingredients: ingredients,
+//             directions: methods,
+//             userID: userID,
+//             serve: recipe.serve,
+//             time: recipe.time
+//           },(error)=>{
+//             if (error) {
+//               // The write failed...
+//               msg = " please try uploading again...";
+//               console.log(error+" please try uploading again...");
               
-            } else {
-              // Data saved successfully!
-              msg = "Your Recipe was uploaded successfully...";
-              console.log("Your Recipe was uploaded successfully...");
+//             } else {
+//               // Data saved successfully!
+//               msg = "Your Recipe was uploaded successfully...";
+//               console.log("Your Recipe was uploaded successfully...");
               
-            }
-          })
-          console.log(userID);
-        } else {
-          console.log("User has not sign in");
-        }
-      });
-    });
+//             }
+//           })
+//           console.log(userID);
+//         } else {
+//           console.log("User has not sign in");
+//         }
+//       });
+//     });
     
-    resolve(msg)},)
+//     resolve(msg)},)
   
-}
+// }
 
-  retrieveUserRecipe(){
-    return new Promise((resolve, reject) => {
-      var userid = firebase.auth().currentUser.uid;
-      firebase.database().ref('recipes/').on('value',(data)=>{
-        var recipes = data.val();
-        var keys = Object.keys(recipes)
-        console.log(keys);
-        this.recipe = [];
-         for(var i = 0; i < keys.length; i++){
-          var k = keys[i];
-          var user = recipes[k].userID
-          console.log(user);
-            if(userid == user){
-              var name = recipes[k].name;
-              var description = recipes[k].description
-              var category = recipes[k].category
-              var sub_category = recipes[k].sub_category
-              var ingredients = recipes[k].ingredients
-              var methods = recipes[k].directions
-              var image = recipes[k].image 
-              var likes = recipes[k].likes
+  // retrieveUserRecipe(){
+  //   return new Promise((resolve, reject) => {
+  //     var userid = firebase.auth().currentUser.uid;
+  //     firebase.database().ref('recipes/').on('value',(data)=>{
+  //       var recipes = data.val();
+  //       var keys = Object.keys(recipes)
+  //       console.log(keys);
+  //       this.recipe = [];
+  //        for(var i = 0; i < keys.length; i++){
+  //         var k = keys[i];
+  //         var user = recipes[k].userID
+  //         console.log(user);
+  //           if(userid == user){
+  //             var name = recipes[k].name;
+  //             var description = recipes[k].description
+  //             var category = recipes[k].category
+  //             var sub_category = recipes[k].sub_category
+  //             var ingredients = recipes[k].ingredients
+  //             var methods = recipes[k].directions
+  //             var image = recipes[k].image 
+  //             var likes = recipes[k].likes
               
-              let obj = {
-                key: k,
-                name: name,
-                description: description,
-                category: category,
-                sub_category: sub_category,
-                ingredients: ingredients,
-                methods: methods,
-                image: image,
-                likes: likes
-              }
+  //             let obj = {
+  //               key: k,
+  //               name: name,
+  //               description: description,
+  //               category: category,
+  //               sub_category: sub_category,
+  //               ingredients: ingredients,
+  //               methods: methods,
+  //               image: image,
+  //               likes: likes
+  //             }
 
-              this.recipe.push(obj);
-            }
+  //             this.recipe.push(obj);
+  //           }
         
-          resolve(this.recipe);
-        }
-    })
-    })
-  }
-
-
+  //         resolve(this.recipe);
+  //       }
+  //   })
+  //   })
+  // }
 
   checkstate(){
     return new Promise((resolve, reject)=>{

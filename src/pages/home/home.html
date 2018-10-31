@@ -1,10 +1,45 @@
+<!-- <ion-header>
+        <ion-toolbar color="primary">
+          <ion-buttons start>
+            <button ion-button icon-only>
+                    <ion-icon name="more"></ion-icon>
+            </button>
+          </ion-buttons> -->
+          <!-- <div class="iconz"> -->
+                <!-- <ion-icon name="refresh" class="refresh" (click)="refresh()"></ion-icon> -->
+                <!-- <div class="cnt">{{ count }}</div>
+                <div class="ico"><img class="pot" src="../../assets/icon/icons/icons8-kitchen-50.png" (click)="presentPopover($event)"></div> -->
+        <!-- </div> -->
+          <!-- <ion-title></ion-title>
+      
+          <ion-buttons end>
+            <button ion-button icon-only> -->
+                    <!-- <ion-icon name="refresh" class="" color="light" (click)="refresh()"></ion-icon> -->
+                     <!-- <div class="">{{ count }}</div> 
+                     <img class="" src="../../assets/icon/icons/icons8-kitchen-50.png" (click)="presentPopover($event)"> 
+            </button>
+          </ion-buttons>
+      
+        </ion-toolbar>
+      </ion-header> -->
+      
+
+
+
+
+
 <ion-content>
     <div class="up">
-            <ion-icon name="refresh" class="refresh" (click)="refresh()"></ion-icon>
-            <div class="cnt">{{ count }}</div>
-            <div class="ico"><img src="../../assets/icon/icons/icons8-kitchen-50.png" (click)="presentPopover($event)"></div>
+        <div class="iconz">
+                <ion-icon name="refresh" class="refresh" (click)="refresh()"></ion-icon>
+              
+                <div class="cnt">{{ count }}</div>
+                <div class="ico"><img class="pot" src="../../assets/icon/icons/icons8-kitchen-50.png" (click)="presentPopover($event)"></div>
+       
+        </div>
+            
         <div class="name">
-            <img src="../../assets/icon/hat logo.PNG" width="40px" height="40px">
+            <img src="../../assets/icon/hat logo.PNG" width="40px" height="40px" class ="logo">
         </div>
         <div class="name2">
             chefsFridge
@@ -13,15 +48,24 @@
         <div class="img">
             <!-- <img src="../../assets/imgs/food.png" alt=""> -->
             <div class="items">
-                <div class="ques">Whats in your Fridge?</div>
-                
-                <rl-tag-input class="textinput"
-                [(ngModel)]="itemDis"
-                [addOnBlur]="false"
-                [autocomplete]="true"
-                [autocompleteItems]="ingred"
-                placeholder="Add Item">
-              </rl-tag-input>
+                    <ng-container *ngIf="category == ''; then non; else some"></ng-container>
+                    <ng-template #non>
+                        <div class="none">
+                                Choose your category...
+                        </div>
+                    </ng-template>
+                    <ng-template  #some>
+                            <div class="ques">Whats in your Fridge?</div>
+                    
+                            <rl-tag-input class="textinput"
+                            [(ngModel)]="itemDis"
+                            [addOnBlur]="false"
+                            [autocomplete]="true"
+                            [autocompleteItems]="ingred"
+                            placeholder="Add Item">
+                          </rl-tag-input>
+                    </ng-template>
+                    
             </div>
         </div>
 

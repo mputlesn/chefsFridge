@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { ChefsfridgeProvider } from '../../providers/chefsfridge/chefsfridge';
 import { ViewPage } from '../view/view';
-import { SearchPage } from '../search/search';
 import itemArr from '../../interfaces/itemArr';
 /**
  * Generated class for the ResultsPage page.
@@ -20,10 +19,10 @@ export class ResultsPage {
 
   category: string = this.navParams.get("cat");
   sub: string = this.navParams.get("sub");
-  items : any = this.navParams.get("items");
+  items = this.navParams.get("items");
   recipes: any = [];
   arr = itemArr;
-
+  oops: string;
   constructor(public navCtrl: NavController, public navParams: NavParams, private chefsFridge: ChefsfridgeProvider, public loadingCtrl: LoadingController) {
     console.log(this.category);
     console.log(this.sub);
@@ -33,6 +32,9 @@ export class ResultsPage {
       console.log(this.recipes);
 
     })
+    // if (this.recipes == []) {
+    //   this.oops = " Oops! Sorry..."+<br>+"There are no recipes with your ingredients"+<br>"Please try again..."
+    // }
   }
 
   ionViewDidLoad() {
@@ -42,6 +44,7 @@ export class ResultsPage {
       duration: 3000
     });
     loader.present();
+    
   }
 
   view(key){

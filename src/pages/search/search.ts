@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { ChefsfridgeProvider } from '../../providers/chefsfridge/chefsfridge'
-import { ConfirmPage } from '../confirm/confirm';
 import { PopoverController } from 'ionic-angular';
-// import items from '../../interfaces/array';
-import cat from '../../interfaces/cat';
-import itemArr from '../../interfaces/itemArr';
-import { HomePage } from '../home/home';
 
 declare var firebase;
 /**

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController  } from 'ionic-angular';
 import { ResultsPage } from '../results/results';
-import cat from '../../interfaces/cat';
 /**
  * Generated class for the ConfirmPage page.
  *
@@ -45,7 +44,7 @@ export class ConfirmPage {
       var obj = {
           cat: this.cat,
           sub: this.sub,
-          item: this.items,
+          items: this.items,
    
       }
       this.navCtrl.push(ResultsPage, obj);

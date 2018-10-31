@@ -8,8 +8,6 @@ import { HttpClientModule } from '@angular/common/http'
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ChefsfridgeProvider } from '../providers/chefsfridge/chefsfridge';
-import { SignInPage } from '../pages/sign-in/sign-in';
-import { SignUpPage } from '../pages/sign-up/sign-up';
 import { SearchPage } from '../pages/search/search';
 import { ResultsPage } from '../pages/results/results';
 import { ViewPage } from '../pages/view/view';
@@ -23,8 +21,6 @@ import { IonicStorageModule } from '@ionic/storage';
   declarations: [
     MyApp,
     HomePage,
-    SignInPage,
-    SignUpPage,
     SearchPage,
     ResultsPage,
     ViewPage,
@@ -42,8 +38,6 @@ import { IonicStorageModule } from '@ionic/storage';
   entryComponents: [
     MyApp,
     HomePage,
-    SignInPage,
-    SignUpPage,
     SearchPage,
     ResultsPage,
     ViewPage,

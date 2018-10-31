@@ -1,5 +1,12 @@
 page-home {
 
+    .iconz{
+        height: 20%;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 2%;
+    }
+
     [_nghost-c1] {
      
         display: none;
@@ -105,11 +112,14 @@ page-home {
         // margin: 0 auto;
     }
     
-    .ico{
-        height: 30px;
-        width: 30px;
-        margin-left: 88%;
-        margin-top: -9.5em;
+    // .ico{
+    //     height: 20px;
+    //     width: 20px;
+    // }
+    .pot{
+        height: 25px;
+        width: 25px;
+        margin-left: 1em
     }
 
     .iconImage2{
@@ -129,10 +139,16 @@ page-home {
         color: white;
         width:5%;
         text-align: center;
-        margin-left: 86%;
+        left: 0.6em;
         top: -8em;
         border-radius: 1em;
         font-size: 1em
+    }
+
+    .none{
+        margin-top: 2em;
+        color: white;
+        font-size: 1.1em;
     }
 
     .ques{
@@ -150,11 +166,7 @@ page-home {
         margin-top: 40px;
         color: white !important;
     }
-    .cat{
-        margin-left: 10%;
-        margin-right: 8%;
-        margin-top: -20px;
-    }
+   
     .name{
         color: white;
         text-align: center;
@@ -181,46 +193,30 @@ page-home {
         
     }
 
-    // .icon{
-    //     border-radius: 15px;
-    //     width: 8em;
-    //     box-shadow: 2px 1px 8px rgba(#55141C, 0.9);
-    //     margin: 0.6em auto;
-    // }
     .icon{
         border-radius: 15px;
         width: 47%;
         height: 100px;
         box-shadow: 2px 1px 8px rgba(#55141C, 0.9);
-        margin: 0.8em auto;
-        margin-left: 0px;
+        // margin: 0.8em auto;
+        
         border:solid 0px #55141C;
        
     }
-    // .icon{
-    //     border-radius: 15px;
-    //     box-shadow: 2px 1px 8px rgba(#55141C, 0.9);
-    //     margin: 0 auto;
-    //     width: 65px;
-    //     height: 5.5em;
-
-    // }
 
     .refresh{
         color: white;
         font-size: 2.2em;
-        padding: 3%;
-        margin-top: -1%;
+        // padding: 3%;
+        // margin-top: -1%;
         font-weight: 100;
     }
-    // .sleve{
-    //     display: block;
-    //     margin: 0 auto;
-    //     background-color: #55141C;
-    //     height: 0.2em;
-    //     width: 70%;
-        
-    // }
+    .cat{
+        margin-left: 10%;
+        margin-right: 8%;
+        margin-top: -30px;
+    }
+
     .sub{
         
         // border:solid 2px #55141C;
@@ -228,12 +224,9 @@ page-home {
        margin-right: 15%;
        padding-left: 3%;
        padding-right: 2%;
-       margin-top: -5%;
+       margin-top: -2.5em;
     }
 
-    .iconRow{
-        // margin-top: -30px;
-    }
     .iconImage{
         margin-top: -8px;
         padding-top: 5px;
@@ -282,37 +275,30 @@ page-home {
         height: 80px;
         // border: solid 2px #55141C;
         background-color: white;
-        // font-size: 1.1em;
         border:solid 1px #55141C;
-        
-        
     }
+
     .row1{
         width: 80%;
     }
+
     .empty{
         text-align: center;
         margin-top: 3em;
         font-size: 1.5em;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-    // .imgz{
-
-    // }
+    
     .categoryIcons{
        text-align: center;
         
 
     }
-    // .iconText{
-    //     color: #55141C;
-    //     font-size: 1em;
-    // }
-    .gridIcons{
     
-    //  border: 2px solid red;
+    .gridIcons{
      text-align: center;
     }
+
     ::placeholder {
         color: white;
         opacity: 1; /* Firefox */
@@ -350,6 +336,464 @@ page-home {
         overflow-x: hidden;
         overflow-y: hidden;
     }
+
+    @media only screen and (min-device-width: 320px) and (max-device-width: 568px){
+        .pot{
+            position: absolute;
+            top: 4%;
+            right: 6%;
+        }
+        .cnt{
+            
+        }
+        .up{
+            height: 12em;
+             }
+         .img{
+             height: 11em;
+             width: 90%;
+             
+             }
+
+             .ico{
+                height: 30px;
+                width: 30px;
+                margin-left: 88%;
+                margin-top: -9em;
+            }
+
+             .icon{
+                border-radius: 15px;
+                width: 47%;
+                height: 100px;
+                margin: 0.4em auto;
+               
+               
+            }
+             .iconsCat{
+                 border-radius: 20px;
+                 box-shadow: 2px 1px 8px rgba(#55141C, 0.9);
+                 margin: 2%;
+                 height: 70px;
+             }
+             .text{
+                 font-size: 1.1em;
+             }
+             .text2{
+                 
+                 font-size: 1em;
+                 
+             }
+             .iconImage2{
+                 position: relative;
+                 left: 43%;
+                 top: 0px;
+                 width: 40px;
+                 height: 40px;
+             }
+             .iconImage3{
+                 position: relative;
+                 left: 20%;
+                 top: 5px;
+             }
+             .cnt{
+                 z-index: 1;
+                 margin-top: 5px;
+                 margin-left: 85%;
+             }
+             .iconRow{
+                 margin-top: -20px;
+             }
+             .sub{
+                 height: 230px;
+             }
+             ion-grid{
+                 margin-top: 15px;
+             }
+         }
+         @media only screen and (min-device-width: 375px) and (max-device-width: 667px){
+         
+            .pot{
+                position: absolute;
+                margin-top: 2%
+            }
+                  .iconsCat{    
+                      margin: 3%;
+                      height: 78px;
+                  }
+                  
+                  .cnt{
+                      margin-left: 86%;
+                  }
+                  
+                  .refresh{
+                     padding-left:4%;
+                     padding-top: 3%;
+                 }
+                  
+                 .iconImage3{
+                     position: relative;
+                     left: 23%;
+                     top: 5px;
+                 }
+                 .text2{
+                     font-size: 1.1em;
+                 }
+          
+              }
+              @media only screen and (min-device-width: 414px) and (max-device-width: 736px){
+                 .pot{
+                     position: absolute;
+                     margin-top: 2%;
+                 }
+                .up{
+                     height: 15em;
+                 }
+                 .img{
+                     height: 15em;
+                     font-size: 1.1em;
+                 }
+                 .iconsCat{
+                     margin: 3%;
+                     height: 78px;
+                 }
+                 .cnt{
+                    //  position:fixed;
+                    // z-index: 1;
+                     margin-top: 10px;
+                     margin-left: 86%;
+                 }
+                 
+                .refresh{
+                    padding-left:4%;
+                    padding-top: 3%;
+                }
+                 
+                .iconImage3{
+                    position: relative;
+                    left: 25%;
+                    top: 5px;
+                }
+                .text2{
+                    font-size: 1.1em;
+                }
+                .iconRow{
+                 margin-top: 10px;
+             }
+         
+             }
+             @media only screen and (min-device-width: 375px) and (max-device-width: 812px){
+                .pot{
+                    position: absolute;
+                    right: 8%;
+                    top: 3.5%;
+                } 
+                .cnt{
+                    margin-top: 10px;
+                    margin-left: 85%;
+                    z-index: 1;
+                }
+                .up{
+                     height: 16em;
+                 }
+                 .img{
+                     height: 15em;
+                     font-size: 1.1em;
+                 }
+
+                 .refresh.icon.icon-md.ion-md-refresh{
+                    margin-top: -1%;
+                 }
+
+                 .refresh{
+                    color: white;
+                    font-size: 2.2em;
+                    // padding: 3%;
+                    // margin-top: -1%;
+                    font-weight: 100;
+                }
+                 .iconsCat{
+                     
+                     margin: 3%;
+                     height: 78px;
+                 }
+
+                 
+                 .refresh{
+                    padding-left:4%;
+                    padding-top: 3%;
+                }
+
+               
+                 
+                .iconImage3{
+                    position: relative;
+                    left: 23%;
+                    top: 5px;
+                }
+                .text2{
+                    font-size: 1.1em;
+                }
+                .iconRow{
+                 margin-top: 10px;
+             }
+         
+             }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px){
+
+        .up{
+            height: 25em;
+            background-color: #55141C;
+            margin-bottom: -8.5em;
+            box-shadow: 2px 5px 7px rgba(0, 0,0, .5);
+        }
+        .pot{
+
+        }
+
+        .ques{
+            font-size: 1.3em;
+        }
+        .refresh{
+            color: white;
+            font-size: 4em;
+            // padding: 3%;
+            // margin-top: -1%;
+            // font-weight: 100;
+            // margin-left: 2.5%;
+            // position: absolute;
+        }
+
+        .none{
+            font-size: 1.3em;
+        }
+       
+
+        // .ico{
+        //     height: 45px;
+        //     width: 45px;
+        //     margin-left: 88%;
+        //     margin-top: -11em;
+        // }
+        .pot{
+            width: 45px;
+            height: 45px;
+            margin-left: 88%;
+            // margin-top: -20%;
+            position: absolute;
+            top: 5%;
+            right: 8%
+
+        }
+
+        .cnt{
+            width:1.6em;
+            top: -5.2em;
+            font-size: 1.7em;
+            z-index: 1;
+        }
+
+       
+        .name2{
+            color: white;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size:3.2em
+        }
+        .name{
+            color: white;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 2.5em;
+        }
+        .logo{
+            height:54px;
+            width: 54px;
+        }
+        .iconsCat{
+            border-radius: 23px;
+            box-shadow: 2px 1px 8px rgba(#55141C, 0.9);
+            margin: 4%;
+            height: 5em;
+            // border: solid 2px #55141C;
+            background-color: white;
+            font-size: 1.3em;
+            border:solid 1px #55141C;
+          
+            
+        }
+
+        .iconImage2{
+           
+            left: 47%;
+            top: 0px;
+            
+        }
+        .iconImage3{
+            left: 32%;
+            width: 4em;
+            height: 4em;
+            
+        }
+       
+        .sub{
+        
+            // border:solid 2px #55141C;
+           margin-left: 15%;
+           margin-right: 15%;
+           padding-left: 6%;
+           padding-right: 0%;
+           padding-bottom: 2%;
+           padding-top: 2%;
+        }
+
+        .text2{
+            font-size: 1.5em;
+        }
+
+        .icon{
+            // border-radius: 15px;
+            width: 40%;
+            height: 130px;
+            margin: 2%
+            // box-shadow: 2px 1px 8px rgba(#55141C, 0.9);
+            // margin: 0.8em auto;
+            // margin-left: 0px;
+            // border:solid 0px #55141C;
+           
+        }
+    
+    
+     }
+
+     @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px){
+
+        .pot{
+            height: 55px;
+            width: 55px;
+            margin-left: 1em;
+            margin-top: 0em
+        }
+       
+        .up{
+            height: 35em;
+            background-color: #55141C;
+            margin-bottom: -10.5em;
+            box-shadow: 2px 5px 7px rgba(0, 0,0, .5);
+        }
+        .refresh{
+            color: white;
+            font-size: 5.2em;
+            padding: 3%;
+            margin-top: 0%;
+            font-weight: 100;
+            margin-left: 2.5%;
+        }
+
+        .cnt{
+            width:1.6em;
+            top: -4.5em;
+            font-size: 1.7em;
+            margin-left: 86%
+        }
+
+        .ico{
+            height: 51px;
+            width: 52px;
+            margin-left: 88%;
+            margin-top: -10em;
+        }
+        .name2{
+            color: white;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size:3.2em
+        }
+        .name{
+            color: white;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 2.2em;
+        }
+        .logo{
+            height:60px;
+            width: 60px;
+        }
+        .iconsCat{
+            border-radius: 23px;
+            box-shadow: 2px 1px 8px rgba(#55141C, 0.9);
+            margin: 4%;
+            height: 110px;
+            // border: solid 2px #55141C;
+            background-color: white;
+             font-size: 1.5em;
+            border:solid 1px #55141C;
+          
+            
+        }
+
+        .iconImage2{
+           
+            left: 47%;
+            top: 0px;
+            
+        }
+        .img{
+            height: 25em;
+            width: 90%;
+            position: relative;
+            top: 23%;
+            display: block;
+            margin: 0 auto;
+            background: linear-gradient(360deg, rgba(rgb(44, 6, 11), .9), transparent),url('../../assets/imgs/food.png');
+            background-size: cover;
+            border-radius: 2em;
+            display: flex;
+            align-items: center;
+            box-shadow: 2px 5px 7px rgba(0, 0,0, .5);
+            margin-top: -20px;
+        }
+        .iconImage3{
+           
+            width: 5em;
+            height: 5em;
+            
+        }
+
+        .sub{
+        
+            // border:solid 2px #55141C;
+           margin-left: 15%;
+           margin-right: 15%;
+           padding-left: 6%;
+           padding-right: 0%;
+           padding-bottom: 2%;
+           padding-top: 2%;
+        }
+
+        .text2{
+            font-size: 2em;
+        }
+
+        .icon{
+            // border-radius: 15px;
+            width: 40%;
+            height: 130px;
+            margin: 2%
+            // box-shadow: 2px 1px 8px rgba(#55141C, 0.9);
+            // margin: 0.8em auto;
+            // margin-left: 0px;
+            // border:solid 0px #55141C;
+           
+        }
+    
+    
+     }
+
+
+
+
 
 
     }
