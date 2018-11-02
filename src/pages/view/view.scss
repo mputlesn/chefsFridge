@@ -16,6 +16,9 @@ page-view {
         margin-bottom: 1em;
         box-shadow: 5px 4px 5px rgba(grey, .8);
     }
+    // .ion-md-arrow-round-back:before {
+    //     box-shadow: 1px 1px 1px rgba(grey, .1);
+    // }
     .dishNameText{
         font-size: 1.2em;
         font-weight: bold;
@@ -106,7 +109,7 @@ page-view {
     }
     .backButton{
         font-size: 1.5em;
-        background-color: #55141C;;
+        // background-color: #55141C;;
         padding: 5px;
         color: white;
         border-radius: 1em;
@@ -114,6 +117,7 @@ page-view {
         margin-top: 5%;
         width: 1.5em;
         text-align: center;
+        font-weight: 600;
     }
     #ins{
         padding: 5%;
@@ -123,6 +127,218 @@ page-view {
         background-color: white;
         color: #55141C;
         font-size: 0.9em;
+        font-weight: 600;
+        box-shadow: 5px 4px 5px rgba(grey, .1);
         
     }
+
+    @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px){
+        .recipeImage{
+            height: 45em;
+        }
+
+        .imageHolder{
+            height: 45em;
+        }
+        .dishDetailsHolder{
+            height: 8em;
+        }
+        .dishNameText{
+            font-size: 2.1em;
+        }
+
+        .completeDetailsHolder{
+            border: solid 2px black;
+            margin-top: 10%;
+            height: 15em;
+        }
+        .headerTextIngridients{
+            height: 6em; 
+            
+        }
+
+        .headerTextInstructions{
+            height: 6em;
+            margin-top: 2em;
+        }
+        .IngridientsSection{
+            border: solid 0px black;
+            top: 33px;
+            background-color: white;
+            color: #55141C;
+            font-size: 1.5em;
+            height: 48px;
+            display: flex;
+            flex-direction: row;
+            padding: 0 1em;
+            margin-left: 2em;
+            margin-right: 2em;
+            &:first-child{
+                margin-top: 2em;
+            }
+        }
+        .ingridientsContent{
+            left: 15%;
+            top: -27px;
+        }
+        .IngridientsSection2{
+            border: solid 0px black;
+            top: 45px;
+            background-color: white;
+            display: flex;
+            flex-flow: row nowrap;
+        }
+
+        .cookIcon{
+            width: 2em;
+            height: 2em;
+            margin: .2em;
+            position: relative;
+            top: .06em;
+        }
+
+        .ingridientsButton{
+            font-size: 2em;
+        }
+
+        .fontslide{
+       
+            font-size: 1.5em;
+            box-shadow: 5px 4px 5px rgba(grey, .8);
+            
+        }
+        .backButton{
+            font-size: 3em;
+            font-weight: 600;
+            box-shadow: 5px 4px 5px rgba(grey, .1);
+        }
+        
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px){
+        .recipeImage{
+            height: 45em;
+        }
+
+        .imageHolder{
+            height: 45em;
+        }
+        .dishDetailsHolder{
+            height: 8em;
+        }
+        .dishNameText{
+            font-size: 2.1em;
+        }
+
+        .completeDetailsHolder{
+            border: solid 2px black;
+            margin-top: 5%;
+            height: 15em;
+        }
+        .headerTextIngridients{
+            height: 6em; 
+            
+        }
+
+        .headerTextInstructions{
+            height: 6em;
+            margin-top: 2em;
+        }
+        .IngridientsSection{
+            border: solid 0px black;
+            top: 33px;
+            background-color: white;
+            color: #55141C;
+            font-size: 1.5em;
+            height: 48px;
+            display: flex;
+            flex-direction: row;
+            padding: 0 1em;
+            margin-left: 2em;
+            margin-right: 2em;
+            &:first-child{
+                margin-top: 2em;
+            }
+        }
+        .ingridientsContent{
+            left: 15%;
+            top: -27px;
+        }
+        .IngridientsSection2{
+            border: solid 0px black;
+            top: 45px;
+            background-color: white;
+            display: flex;
+            flex-flow: row nowrap;
+        }
+
+        .cookIcon{
+            width: 2em;
+            height: 2em;
+            margin: .2em;
+            position: relative;
+            top: .06em;
+        }
+
+        .ingridientsButton{
+            font-size: 2em;
+        }
+
+        .fontslide{
+       
+            font-size: 1.5em;
+            
+        }
+        .backButton{
+            font-size: 3em;
+            font-weight: 600;
+            box-shadow: 5px 4px 5px rgba(grey, .1);
+        }
+        
+    }
+
+    @media only screen and (min-device-width: 414px) and (max-device-width: 736px){
+        .recipeImage{
+            height: 30em;
+        }
+
+        .imageHolder{
+            height: 30em;
+        }
+
+        .completeDetailsHolder{
+            border: solid 2px black;
+            margin-top: 5%;
+        }
+
+        .backButton{
+            font-size: 2em;
+            font-weight: 600;
+            box-shadow: 5px 4px 5px rgba(grey, .1);
+        }
+        
+    }
+
+    @media only screen and (min-device-width: 375px) and (max-device-width: 667px){
+        .recipeImage{
+            height: 30em;
+        }
+
+        .imageHolder{
+            height: 30em;
+        }
+
+        .completeDetailsHolder{
+            border: solid 2px black;
+            margin-top: 3%;
+        }
+        
+        .backButton{
+            font-size: 2em;
+            font-weight: 600;
+            box-shadow: 5px 4px 5px rgba(grey, .1);
+        }
+        
+    }
+
 }

@@ -15,31 +15,55 @@ import itemArr from '../../interfaces/itemArr';
   selector: 'page-results',
   templateUrl: 'results.html',
 })
-export class ResultsPage {       
+export class ResultsPage {
 
   category: string = this.navParams.get("cat");
   sub: string = this.navParams.get("sub");
   items = this.navParams.get("items");
   recipes: any = [];
+  temp: any = []
   arr = itemArr;
-  a: string;
-  b: string;
-  c: string;
+  a: string = "";
+  b: string = "";
+  c: string = "";
   constructor(public navCtrl: NavController, public navParams: NavParams, private chefsFridge: ChefsfridgeProvider, public loadingCtrl: LoadingController) {
     console.log(this.category);
     console.log(this.sub);
     console.log(this.items);
-    this.chefsFridge.itemSearch(this.category, this.sub, this.items).then((data)=>{
+    this.chefsFridge.itemSearch(this.category, this.sub, this.items).then((data: any) => {
+      console.log("data is")
+      console.log(data)
       this.recipes = data;
-      console.log(this.recipes);
-      if (this.recipes == []) {
-        this.a = " Oops! Sorry...";
-        this.b = "There are no recipes with your ingredients";
-        this.c = "Please try again...";
-      }
-      
+      this.temp = data
+      console.log(this.temp)
+      console.log(this.temp.length)
+
+      // setTimeout(()=>{
+      //   if (this.temp.length > 0) {
+      //     console.log("if inside");
+      //     this.recipes = data;
+      //     console.log(this.recipes);
+      //   }else{
+      //     console.log("else");
+      //     this.a = " Oops! Sorry...";
+      //     this.b = "There are no recipes with your ingredients";
+      //     this.c = "Please try again...";
+      //   } 
+      // }, 2000)
+
     })
-    
+
+    // if (this.temp.length > 0) {
+    //   console.log("if inside");
+    //   this.recipes = this.temp;
+    //   console.log(this.recipes);
+    // }else{
+    //   console.log("else");
+    //   this.a = " Oops! Sorry...";
+    //   this.b = "There are no recipes with your ingredients";
+    //   this.c = "Please try again...";
+    // } 
+
   }
 
   ionViewDidLoad() {
@@ -49,15 +73,15 @@ export class ResultsPage {
       duration: 3000
     });
     loader.present();
-    
+
   }
 
-  view(key){
-    this.navCtrl.push(ViewPage, {key:key});
-   }
+  view(key) {
+    this.navCtrl.push(ViewPage, { key: key });
+  }
 
-   back(){
-     this.navCtrl.pop();
-   }
+  back() {
+    this.navCtrl.pop();
+  }
 
 }
